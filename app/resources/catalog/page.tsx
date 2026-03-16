@@ -7,8 +7,10 @@ export default function CatalogPage() {
 
   return (
     <DocsShell toc={[]} currentPath="/resources/catalog">
-      <h1 className="mb-3 text-4xl font-semibold tracking-tight text-zinc-50">Question Catalog</h1>
-      <p className="mb-8 max-w-3xl text-lg text-zinc-400">
+      <h1 className="mb-3 text-[2.8rem] font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+        Question Catalog
+      </h1>
+      <p className="mb-8 max-w-3xl text-base text-[var(--text-secondary)]">
         Structured list of all practice questions with type tags and inferred difficulty.
       </p>
       <DataTable

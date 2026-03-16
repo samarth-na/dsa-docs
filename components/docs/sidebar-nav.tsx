@@ -13,11 +13,11 @@ function isActive(path: string, href: string): boolean {
 
 export function SidebarNav({ sections, currentPath }: Props) {
   return (
-    <aside className="hidden h-[calc(100vh-3.5rem)] border-r border-white/5 px-4 py-7 lg:block">
+    <aside className="hidden h-[calc(100vh-3.5rem)] border-r border-[var(--border-soft)] bg-[var(--bg-sidebar)] px-4 py-7 lg:block">
       <div className="space-y-7">
         {sections.map((section) => (
           <section key={section.label}>
-            <h2 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-zinc-500">
+            <h2 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-secondary)]">
               {section.label}
             </h2>
             <div className="space-y-0.5">
@@ -30,8 +30,8 @@ export function SidebarNav({ sections, currentPath }: Props) {
                     className={clsx(
                       "block rounded-md px-3 py-1.5 text-[15px] leading-6 transition",
                       active
-                        ? "bg-[#1a1d26] text-[#ff6b8a]"
-                        : "text-zinc-400 hover:bg-[#151923] hover:text-zinc-200"
+                        ? "bg-[color-mix(in_srgb,var(--brand-1)_16%,transparent)] text-[var(--brand-2)]"
+                        : "text-[var(--text-sidebar)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
                     )}
                   >
                     {item.label}

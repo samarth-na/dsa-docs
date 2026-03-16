@@ -3,9 +3,9 @@ import { clsx } from "clsx";
 
 const links = [
   { href: "/docs", label: "Guide" },
-  { href: "/docs/roadmap", label: "Roadmap" },
+  { href: "/docs/roadmap", label: "Config" },
   { href: "/docs/question_catalog", label: "CSV" },
-  { href: "/docs/Placement", label: "Placement" }
+  { href: "/docs/Placement", label: "Resources" }
 ];
 
 type Props = {
@@ -18,29 +18,38 @@ function isActive(currentPath: string, href: string): boolean {
 
 export function TopNav({ currentPath }: Props) {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b0d12]">
-      <div className="mx-auto flex h-14 w-full max-w-[1600px] items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--bg-page)]">
+      <div className="mx-auto flex h-14 w-full max-w-[1600px] items-center justify-between px-3 sm:px-4 md:px-6">
         <Link href="/docs" className="group flex items-center gap-2">
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#252a36] text-xs font-bold text-[#ff6b8a]">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--bg-surface)] text-xs font-bold text-[var(--brand-2)]">
             D
           </span>
-          <span className="text-base font-semibold tracking-tight text-zinc-100">DSA+</span>
+          <span className="text-base font-semibold tracking-tight text-[var(--text-primary)]">DSA+</span>
         </Link>
 
-        <nav className="flex items-center gap-5">
+        <nav className="hidden items-center gap-6 md:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={clsx(
-                "text-sm transition",
-                isActive(currentPath, link.href) ? "text-[#ff6b8a]" : "text-zinc-400 hover:text-zinc-100"
+                "text-[15px] font-medium transition",
+                isActive(currentPath, link.href)
+                  ? "text-[var(--brand-2)]"
+                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
               )}
             >
               {link.label}
             </Link>
           ))}
         </nav>
+
+        <Link
+          href="/docs"
+          className="rounded-md border border-[var(--border-soft)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)] md:hidden"
+        >
+          Menu
+        </Link>
       </div>
     </header>
   );

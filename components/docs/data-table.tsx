@@ -5,12 +5,15 @@ type Props = {
 
 export function DataTable({ headers, rows }: Props) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/60">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)]">
       <table className="w-full border-collapse text-left text-sm">
         <thead>
-          <tr className="bg-zinc-900/80">
+          <tr className="bg-[color-mix(in_srgb,var(--bg-surface)_80%,black)]">
             {headers.map((header) => (
-              <th key={header} className="border-b border-white/10 px-4 py-3 font-medium text-zinc-100">
+              <th
+                key={header}
+                className="border-b border-[var(--border-soft)] px-4 py-3 text-[0.85rem] font-medium text-[var(--text-primary)]"
+              >
                 {header}
               </th>
             ))}
@@ -18,9 +21,15 @@ export function DataTable({ headers, rows }: Props) {
         </thead>
         <tbody>
           {rows.map((row, index) => (
-            <tr key={`${row[0]}-${index}`} className="hover:bg-zinc-900/50">
+            <tr
+              key={`${row[0]}-${index}`}
+              className="hover:bg-[color-mix(in_srgb,var(--bg-surface)_85%,black)]"
+            >
               {row.map((cell, i) => (
-                <td key={`${i}-${cell}`} className="border-b border-white/5 px-4 py-3 align-top text-zinc-300">
+                <td
+                  key={`${i}-${cell}`}
+                  className="border-b border-[var(--border-soft)] px-4 py-3 align-top text-[var(--text-secondary)]"
+                >
                   {cell}
                 </td>
               ))}
