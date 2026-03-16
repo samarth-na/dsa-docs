@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --bg-0: #0a0c11;
+  --bg-1: #10131b;
+  --bg-2: #171b24;
+  --text-0: #f5f7fb;
+  --text-1: #c4cad6;
+  --text-2: #9198a6;
+  --accent: #ff5b7f;
+  --accent-soft: #ff8da4;
+}
+
+@theme inline {
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+  color: var(--text-0);
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 45%, black);
+  color: white;
+}

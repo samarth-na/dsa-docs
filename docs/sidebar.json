@@ -1,0 +1,49 @@
+{
+  "sidebar": [
+    {
+      "label": "Getting Started",
+      "items": [
+        { "label": "Home", "link": "/docs/" },
+        { "label": "Study Roadmap", "link": "/docs/roadmap" },
+        { "label": "Questions by Type", "link": "/docs/questions_by_type" }
+      ]
+    },
+    {
+      "label": "Practice",
+      "items": [
+        { "label": "LeetCode Study Plan", "link": "/docs/leetcode_study_plan" },
+        { "label": "LeetCode Questions", "link": "/docs/leetcode_questions" },
+        { "label": "Question Catalog", "link": "/docs/question_catalog" }
+      ]
+    },
+    {
+      "label": "Quick Reference",
+      "items": [
+        { "label": "Topic Cheatsheets", "link": "/docs/topic_wise_cheatsheets" },
+        { "label": "Arrays", "link": "/docs/topic_wise_cheatsheets/arrays" },
+        { "label": "Strings", "link": "/docs/topic_wise_cheatsheets/strings" },
+        { "label": "Patterns", "link": "/docs/topic_wise_cheatsheets/patterns" },
+        { "label": "Number Theory", "link": "/docs/topic_wise_cheatsheets/number_theory" },
+        { "label": "Matrix", "link": "/docs/topic_wise_cheatsheets/matrix" },
+        { "label": "Two Pointers", "link": "/docs/topic_wise_cheatsheets/two_pointers" },
+        { "label": "Binary Search", "link": "/docs/topic_wise_cheatsheets/binary_search" }
+      ]
+    },
+    {
+      "label": "Lectures",
+      "items": [
+        { "label": "Lecture Summaries", "link": "/docs/lecture_summaries" },
+        { "label": "Lecture 01-10", "link": "/docs/lecture_summaries/lecture_01" },
+        { "label": "Lecture 11-20", "link": "/docs/lecture_summaries/lecture_11" },
+        { "label": "Lecture 21-30", "link": "/docs/lecture_summaries/lecture_21" },
+        { "label": "Lecture 31-37", "link": "/docs/lecture_summaries/lecture_31" }
+      ]
+    },
+    {
+      "label": "Placement",
+      "items": [
+        { "label": "Placement Notes", "link": "/docs/Placement" }
+      ]
+    }
+  ]
+}
