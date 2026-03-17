@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect, useCallback } from "react";
 import posthog from "posthog-js";
 
 type MatrixRow = Record<string, string>;
@@ -135,6 +135,16 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
   const [lastPointer, setLastPointer] = useState<{ x: number; y: number } | null>(null);
 
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const zoomRef = useRef(zoom);
+  const panRef = useRef(pan);
+
+  useEffect(() => {
+    zoomRef.current = zoom;
+  }, [zoom]);
+
+  useEffect(() => {
+    panRef.current = pan;
+  }, [pan]);
 
   const filteredRows = useMemo(() => {
     return matrixRows.filter((row) => {
@@ -239,24 +249,6 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
     };
   }
 
-  function handleWheel(event: React.WheelEvent<SVGSVGElement>) {
-    if (event.ctrlKey || event.metaKey) {
-      event.preventDefault();
-    }
-    const point = getSvgPoint(event.clientX, event.clientY);
-    if (!point) return;
-
-    const factor = event.deltaY < 0 ? 1.1 : 0.9;
-    const nextZoom = Math.max(0.45, Math.min(2.8, zoom * factor));
-    const graphPoint = toGraphSpace(point);
-
-    setZoom(nextZoom);
-    setPan({
-      x: point.x - graphPoint.x * nextZoom,
-      y: point.y - graphPoint.y * nextZoom
-    });
-  }
-
   function handleMouseMove(event: React.MouseEvent<SVGSVGElement>) {
     const point = getSvgPoint(event.clientX, event.clientY);
     if (!point) return;
@@ -286,7 +278,76 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
     setDraggingNodeId(null);
     setIsPanning(false);
     setLastPointer(null);
+    setInitialPinchDistance(null);
   }
+
+  const [initialPinchDistance, setInitialPinchDistance] = useState<number | null>(null);
+  const [initialZoom, setInitialZoom] = useState(1);
+
+  const handleWheel = useCallback((event: WheelEvent) => {
+    event.preventDefault();
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    const rect = svg.getBoundingClientRect();
+    const point = {
+      x: ((event.clientX - rect.left) / rect.width) * WIDTH,
+      y: ((event.clientY - rect.top) / rect.height) * HEIGHT
+    };
+
+    const currentZoom = zoomRef.current;
+    const currentPan = panRef.current;
+    const factor = event.deltaY < 0 ? 1.1 : 0.9;
+    const nextZoom = Math.max(0.45, Math.min(2.8, currentZoom * factor));
+    
+    const graphPoint = {
+      x: (point.x - currentPan.x) / currentZoom,
+      y: (point.y - currentPan.y) / currentZoom
+    };
+
+    setZoom(nextZoom);
+    setPan({
+      x: point.x - graphPoint.x * nextZoom,
+      y: point.y - graphPoint.y * nextZoom
+    });
+  }, []);
+
+  const handleTouchStart = useCallback((event: React.TouchEvent<SVGSVGElement>) => {
+    if (event.touches.length === 2) {
+      event.preventDefault();
+      const dx = event.touches[0].clientX - event.touches[1].clientX;
+      const dy = event.touches[0].clientY - event.touches[1].clientY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      setInitialPinchDistance(distance);
+      setInitialZoom(zoomRef.current);
+    }
+  }, [setInitialPinchDistance, setInitialZoom]);
+
+  const handleTouchMove = useCallback((event: React.TouchEvent<SVGSVGElement>) => {
+    if (event.touches.length === 2 && initialPinchDistance !== null) {
+      event.preventDefault();
+      const dx = event.touches[0].clientX - event.touches[1].clientX;
+      const dy = event.touches[0].clientY - event.touches[1].clientY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const scale = distance / initialPinchDistance;
+      const nextZoom = Math.max(0.45, Math.min(2.8, initialZoom * scale));
+      setZoom(nextZoom);
+    }
+  }, [initialPinchDistance, initialZoom]);
+
+  const handleTouchEnd = useCallback(() => {
+    setInitialPinchDistance(null);
+  }, [setInitialPinchDistance]);
+
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    svg.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      svg.removeEventListener("wheel", handleWheel);
+    };
+  }, [handleWheel]);
 
   return (
     <section className="mt-8">
@@ -376,8 +437,11 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
           <svg
             ref={svgRef}
             viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-            className="h-[72vh] w-full touch-none"
-            onWheel={handleWheel}
+            className="h-[72vh] w-full"
+            style={{ touchAction: "none" }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             onMouseMove={handleMouseMove}
             onMouseUp={endInteraction}
             onMouseLeave={endInteraction}
