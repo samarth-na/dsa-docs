@@ -4,6 +4,7 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import { useMemo, useCallback, type ReactElement } from "react";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import posthog from "posthog-js";
 import type { NavSection } from "@/lib/docs";
 import { toPublicPath } from "@/lib/public-paths";
 
@@ -115,6 +116,7 @@ export function SidebarNav({ sections, currentPath }: Props) {
     const params = new URLSearchParams(searchParams.toString());
     params.set("filter", filter);
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    posthog.capture("question_filter_applied", { filter });
   }, [pathname, searchParams, router]);
 
   const renderedSections = useMemo(() => {
@@ -169,6 +171,7 @@ export function SidebarNav({ sections, currentPath }: Props) {
                   <Link
                     key={uiLink}
                     href={uiLink}
+                    onClick={() => posthog.capture("sidebar_link_clicked", { label: item.label, href: uiLink, section: section.label })}
                     className={clsx(
                       "flex items-center gap-2 rounded-md px-3 py-1.5 text-[15px] leading-6 transition",
                       active

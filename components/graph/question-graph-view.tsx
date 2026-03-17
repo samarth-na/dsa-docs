@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import posthog from "posthog-js";
 
 type MatrixRow = Record<string, string>;
 
@@ -294,8 +295,10 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
             <select
               value={difficulty}
               onChange={(e) => {
-                setDifficulty(e.target.value as DifficultyFilter);
+                const value = e.target.value as DifficultyFilter;
+                setDifficulty(value);
                 resetGraphSelectionState();
+                posthog.capture("graph_difficulty_filter_changed", { difficulty: value });
               }}
               className="ml-2 rounded-md border border-[var(--border-soft)] bg-[var(--bg-page)] px-2 py-1 text-sm text-[var(--text-primary)]"
             >
@@ -312,8 +315,10 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
               type="checkbox"
               checked={leetcodeOnly}
               onChange={(e) => {
-                setLeetcodeOnly(e.target.checked);
+                const checked = e.target.checked;
+                setLeetcodeOnly(checked);
                 resetGraphSelectionState();
+                posthog.capture("graph_leetcode_filter_toggled", { enabled: checked });
               }}
             />
             LeetCode only
@@ -328,10 +333,12 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
                 key={topic}
                 type="button"
                 onClick={() => {
+                  const nowActive = !selectedTopics.includes(topic);
                   setSelectedTopics((prev) =>
                     prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic]
                   );
                   resetGraphSelectionState();
+                  posthog.capture("graph_topic_filter_toggled", { topic, enabled: nowActive });
                 }}
                 className={active
                   ? "rounded-full border border-[color-mix(in_srgb,var(--brand-1)_40%,var(--border-soft))] bg-[color-mix(in_srgb,var(--brand-1)_18%,transparent)] px-2 py-1 text-xs text-[var(--text-primary)]"
@@ -349,6 +356,7 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
             onClick={() => {
               setZoom(1);
               setPan({ x: 0, y: 0 });
+              posthog.capture("graph_view_reset");
             }}
             className="rounded-md border border-[var(--border-soft)] px-2 py-1 hover:bg-[var(--bg-page)]"
           >
@@ -420,6 +428,7 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
                   if (event.button !== 0) return;
                   setSelectedNodeId(node.id);
                   setDraggingNodeId(node.id);
+                  posthog.capture("graph_node_selected", { node_id: node.id, node_label: node.label, node_kind: node.kind });
                 }}
               >
                 <circle

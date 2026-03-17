@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { clsx } from "clsx";
+import posthog from "posthog-js";
 import { ThemeToggle } from "@/components/docs/theme-toggle";
 
 const links = [
@@ -34,6 +37,7 @@ export function TopNav({ currentPath }: Props) {
             <Link
               key={link.href}
               href={link.href}
+              onClick={() => posthog.capture("top_nav_link_clicked", { label: link.label, href: link.href })}
               className={clsx(
                 "text-[15px] font-medium transition",
                 isActive(currentPath, link.href)

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import posthog from "posthog-js";
 
 type Theme = "light" | "dark";
 
@@ -39,6 +40,7 @@ export function ThemeToggle() {
     document.documentElement.setAttribute("data-theme", nextTheme);
     window.localStorage.setItem(STORAGE_KEY, nextTheme);
     setTheme(nextTheme);
+    posthog.capture("theme_toggled", { theme: nextTheme });
   };
 
   return (

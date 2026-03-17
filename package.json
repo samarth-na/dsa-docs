@@ -15,6 +15,7 @@
     "github-slugger": "^2.0.0",
     "next": "16.1.6",
     "next-mdx-remote": "^6.0.0",
+    "posthog-js": "^1.360.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "rehype-highlight": "^7.0.2",
