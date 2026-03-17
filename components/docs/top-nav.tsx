@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { clsx } from "clsx";
+import { ThemeToggle } from "@/components/docs/theme-toggle";
 
 const links = [
   { href: "/docs", label: "Guide" },
@@ -44,12 +45,15 @@ export function TopNav({ currentPath }: Props) {
           ))}
         </nav>
 
-        <Link
-          href="/docs"
-          className="rounded-md border border-[var(--border-soft)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)] md:hidden"
-        >
-          Menu
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            href="/docs"
+            className="rounded-md border border-[var(--border-soft)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)] md:hidden"
+          >
+            Menu
+          </Link>
+        </div>
       </div>
     </header>
   );

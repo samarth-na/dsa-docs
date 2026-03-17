@@ -8,7 +8,7 @@ sidebar:
 # Topic-Wise Cheatsheets
 
 These cheatsheets summarize the main DSA patterns used in this repo.
-Use them for revision before solving problems again.
+Use them for fast revision before re-solving problems.
 
 ## Available Cheatsheets
 

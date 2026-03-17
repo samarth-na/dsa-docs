@@ -1,20 +1,29 @@
+---
+title: Two Pointers Cheatsheet
+description: Left-right, slow-fast, in-place compaction, duplicate skipping
+sidebar:
+  order: 6
+---
+
 # Two Pointers Cheatsheet
 
-## What to Learn
+Two pointers works when you can move pointers monotonically (often after sorting) while preserving correctness.
 
-- Left-right scanning
-- Slow-fast pointer updates
-- In-place compaction
-- Duplicate skipping
+## When to Use
 
-## Common Patterns
+- One pass compaction (remove elements / move zeroes)
+- Left-right scan on sorted data
+- Problems that need “shrink window by improving condition” (two ends)
+- Skip duplicates in sorted arrays (unique pairs/triplets)
 
-- One pointer reads, one pointer writes
-- Two pointers move toward each other
-- Move the side that helps improve the answer
-- Skip duplicates after processing a sorted value
+## Core Patterns
 
-## Template Ideas
+- Read/write pointer compaction
+- Left/right pointers converging
+- Move the pointer that can fix the constraint (sum too small/large, etc.)
+- Duplicate skipping around equal values
+
+## Templates
 
 ```cpp
 int write = 0;
@@ -32,30 +41,30 @@ while (left < right) {
 }
 ```
 
-## Repo Questions
+## Practice From This Repo
 
 - Merge Two Sorted Arrays
-- LeetCode 15
-- LeetCode 26
-- LeetCode 27
-- LeetCode 42
-- LeetCode 75
-- LeetCode 80
-- LeetCode 88
-- LeetCode 125
-- LeetCode 151
-- LeetCode 167
-- LeetCode 189
-- LeetCode 283
-- LeetCode 344
-- LeetCode 557
+- LeetCode 15 - 3Sum
+- LeetCode 26 - Remove Duplicates from Sorted Array
+- LeetCode 27 - Remove Element
+- LeetCode 42 - Trapping Rain Water
+- LeetCode 75 - Sort Colors
+- LeetCode 80 - Remove Duplicates from Sorted Array II
+- LeetCode 88 - Merge Sorted Array
+- LeetCode 125 - Valid Palindrome
+- LeetCode 151 - Reverse Words in a String
+- LeetCode 167 - Two Sum II
+- LeetCode 189 - Rotate Array
+- LeetCode 283 - Move Zeroes
+- LeetCode 344 - Reverse String
+- LeetCode 557 - Reverse Words in a String III
 
-## Pitfalls
+## Common Pitfalls
 
-- Forgetting to sort when the method depends on sorted input
-- Missing duplicate-skip logic
-- Moving the wrong pointer and losing correctness
-- Returning indexes in the wrong format
+- Forgetting to sort when the logic assumes ordering
+- Missing duplicate skip loops (`while (l < r && a[l] == a[l-1]) ...`)
+- Moving the wrong pointer and breaking invariants
+- Returning 0-based vs 1-based indices incorrectly (LeetCode varies)
 
 ## Revision Checklist
 
@@ -63,3 +72,8 @@ while (left < right) {
 - I can write slow-fast in-place logic
 - I can handle sorted arrays with left and right pointers
 - I can skip duplicates correctly in triplet problems
+
+## Related
+
+- `docs/questions_by_type.md`
+- `docs/question_catalog.md`

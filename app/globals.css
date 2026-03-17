@@ -1,17 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --bg-canvas: #14121a;
-  --bg-page: #14121a;
-  --bg-sidebar: #14121a;
-  --bg-surface: #14121a;
-  --border-soft: #2e2e32;
-  --text-primary: #ffffff;
-  --text-secondary: #98989f;
-  --text-sidebar: #6a6a71;
-  --brand-1: #4f30e8;
-  --brand-2: #4f30e8;
-  --code-inline: #4f30e8;
+  --bg-canvas: #f3f4f6;
+  --bg-page: #ffffff;
+  --bg-sidebar: #f8fafc;
+  --bg-surface: #f1f5f9;
+  --bg-inline-code: #eef2ff;
+  --border-soft: #d9e1ec;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-sidebar: #6b7280;
+  --brand-1: #2f5bd9;
+  --brand-2: #3a67e6;
+  --code-inline: #2b46a8;
+}
+
+[data-theme="dark"] {
+  --bg-canvas: #1c1d20;
+  --bg-page: #202125;
+  --bg-sidebar: #22242a;
+  --bg-surface: #292b31;
+  --bg-inline-code: color-mix(in srgb, var(--bg-surface) 75%, black);
+  --border-soft: #3a3d45;
+  --text-primary: #f5f6fa;
+  --text-secondary: #b2b3bf;
+  --text-sidebar: #8a8c99;
+  --brand-1: #6a50f0;
+  --brand-2: #7a62f3;
+  --code-inline: #8a78ff;
 }
 
 @theme inline {
@@ -27,6 +43,6 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--brand-1) 45%, black);
+  background: color-mix(in srgb, var(--brand-1) 50%, white 8%);
   color: white;
 }

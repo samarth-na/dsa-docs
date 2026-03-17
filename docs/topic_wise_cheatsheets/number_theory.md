@@ -1,21 +1,30 @@
+---
+title: Number Theory Cheatsheet
+description: Digits, primes, gcd, factors, base conversion
+sidebar:
+  order: 4
+---
+
 # Number Theory Cheatsheet
 
-## What to Learn
+Most “number” problems reduce to digits, factors, or repeated reduction (gcd / mod loops).
 
-- gcd
-- prime checking
-- digit manipulation
-- base conversion
-- factor-based questions
+## When to Use
 
-## Common Patterns
+- Digit extraction / transformation
+- Prime/factors/divisors questions
+- Base conversion (binary/decimal/any base)
+- gcd/lcm style reductions
 
-- Use `% 10` and `/ 10` for digits
-- Use `i * i <= n` for factor loops
-- Convert through decimal for base conversion
-- Write helper functions for repeated math tasks
+## Core Patterns
 
-## Template Ideas
+- Digits: `% 10` / `/ 10` loops
+- Factors: loop to `i * i <= n` and handle paired factor `n / i`
+- Primality: early exit on first divisor
+- Base conversion: convert to decimal, then to target base (unless direct method is simple)
+- Helpers: `gcd`, `isPrime`, `digitSum` to keep main logic readable
+
+## Templates
 
 ```cpp
 while (n > 0) {
@@ -41,12 +50,12 @@ while (b != 0) {
 }
 ```
 
-## Repo Questions
+## Practice From This Repo
 
 - GCD Brute Force
 - GCD Reverse Brute Force
 - GCD Using Euclidean Algorithm
-- Prime Number Check variants
+- Prime Number Check (all variants)
 - Reverse a Number
 - Sum of Digits
 - Decimal to Binary
@@ -56,18 +65,18 @@ while (b != 0) {
 - Chewbacca Number
 - Inverse of Number
 - Convert Any Base to Any Base
-- LeetCode 7
-- LeetCode 9
-- LeetCode 1492
-- LeetCode 202
-- LeetCode 3658
+- LeetCode 7 - Reverse Integer
+- LeetCode 9 - Palindrome Number
+- LeetCode 1492 - The Kth Factor of N
+- LeetCode 202 - Happy Number
+- LeetCode 3658 - GCD of Odd and Even Sums
 
-## Pitfalls
+## Common Pitfalls
 
-- Overflow while reversing or multiplying
-- Forgetting special cases like `n <= 1` for prime
-- Mixing decimal digits with digits from another base
-- Not preserving the original number when needed later
+- Overflow while reversing / multiplying / powering digits
+- Prime edge cases: `n <= 1`, and handling `2` correctly
+- Mixing “digits” of base-10 with digits of another base
+- Losing the original value when you still need it (copy `n` first)
 
 ## Revision Checklist
 
@@ -75,3 +84,8 @@ while (b != 0) {
 - I can check prime efficiently
 - I can compute gcd with Euclid's algorithm
 - I can convert numbers between bases
+
+## Related
+
+- `docs/roadmap.md`
+- `docs/questions_by_type.md`

@@ -1,21 +1,29 @@
+---
+title: Matrix Cheatsheet
+description: Traversal, boundaries, diagonals, rotation, reshape
+sidebar:
+  order: 5
+---
+
 # Matrix Cheatsheet
 
-## What to Learn
+In 2D, most bugs are index/bounds mistakes. Keep `rows` and `cols` explicit.
 
-- Row-column traversal
-- Wave and spiral order
-- Diagonal logic
-- Matrix update problems
-- Rotation and reshape
+## When to Use
 
-## Common Patterns
+- Any 2D traversal (row-wise/col-wise)
+- Boundary shrinking (spiral)
+- Direction toggles (wave/diagonal)
+- In-place transforms (rotate, set-zeroes)
+
+## Core Patterns
 
 - Nested loops for standard traversal
-- Boundary variables for spiral order
-- Direction changes for diagonal or wave travel
-- Separate row and column dimensions clearly
+- Boundaries for spiral: `top/bottom/left/right`
+- Direction toggles for diagonal/wave traversals
+- Always separate row/col dimensions and validate indices
 
-## Template Ideas
+## Templates
 
 ```cpp
 for (int i = 0; i < rows; i++) {
@@ -33,26 +41,26 @@ while (left <= right && top <= bottom) {
 }
 ```
 
-## Repo Questions
+## Practice From This Repo
 
 - Wave Print by Column
 - Spiral Print
 - Matrix Multiplication
-- LeetCode 48
-- LeetCode 54
-- LeetCode 59
-- LeetCode 73
-- LeetCode 74
-- LeetCode 1572
-- LeetCode 498
-- LeetCode 566
+- LeetCode 48 - Rotate Image
+- LeetCode 54 - Spiral Matrix
+- LeetCode 59 - Spiral Matrix II
+- LeetCode 73 - Set Matrix Zeroes
+- LeetCode 74 - Search a 2D Matrix
+- LeetCode 1572 - Matrix Diagonal Sum
+- LeetCode 498 - Diagonal Traverse
+- LeetCode 566 - Reshape the Matrix
 
-## Pitfalls
+## Common Pitfalls
 
-- Mixing rows and columns
-- Accessing out of bounds while shrinking boundaries
-- Updating a matrix in place before preserving necessary information
-- Missing the center cell or double-counting it in diagonal sums
+- Mixing rows/cols (`matrix[rows][cols]` mistakes)
+- Out-of-bounds while shrinking boundaries (check after each pass)
+- In-place updates without preserving info (use markers / first row-col tricks)
+- Double-counting center cell in diagonal sums (odd `n`)
 
 ## Revision Checklist
 
@@ -60,3 +68,8 @@ while (left <= right && top <= bottom) {
 - I can write spiral traversal with boundaries
 - I can handle diagonal sums and diagonal traversal
 - I can reason about matrix rotations and transforms
+
+## Related
+
+- `docs/roadmap.md`
+- `docs/questions_by_type.md`
