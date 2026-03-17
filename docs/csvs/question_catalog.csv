@@ -13,12 +13,6 @@ Maximum of Three Numbers,Find the largest among three given numbers.,Basic Progr
 Maximum of Two Numbers,Compare two inputs and print the larger value.,Basic Programming; Conditionals,Basic
 Minimum Element in Array,Find the smallest element in an array.,Array; Searching,Basic
 Multiplication Table of 7,Print the multiplication table of 7.,Basic Programming; Loops; Math,Basic
-Pattern 1 (Lecture 5),,Pattern; Loops,Basic
-Pattern 1 (Lecture 6),,Pattern; Loops,Basic
-Pattern 2 (Lecture 5),,Pattern; Loops,Basic
-Pattern 3 (Lecture 5),,Pattern; Loops,Basic
-Pattern 4 (Lecture 5),,Pattern; Loops,Basic
-Pattern 5 (Lecture 5),,Pattern; Loops,Basic
 Prime Number Check,Test primality with the straightforward divisor check.,Math; Number Theory,Basic
 Print Counting from 1 to N,Print numbers from 1 up to N.,Basic Programming; Loops,Basic
 Reverse a Number,Reverse the digits of an integer.,Basic Programming; Loops; Digit Manipulation; Math,Basic
@@ -66,20 +60,6 @@ LeetCode 896 - Monotonic Array,Check whether the array is entirely non-decreasin
 LeetCode 9 - Palindrome Number,Check whether an integer reads the same forward and backward.,LeetCode; Math; Digit Manipulation,Easy
 Lottery Game Part 2,Use nested conditions to print a reward and its variant.,Basic Programming; Conditionals,Easy
 Merge Two Sorted Arrays,Merge two sorted arrays into one sorted result.,Array; Two Pointers; Sorting,Easy
-Pattern 1 (Lecture 7),,Pattern; Loops,Easy
-Pattern 1 (Lecture 8),,Pattern; Loops,Easy
-Pattern 1 (Lecture 9),,Pattern; Loops,Easy
-Pattern 2 (Lecture 6),,Pattern; Loops,Easy
-Pattern 2 (Lecture 7),,Pattern; Loops,Easy
-Pattern 2 (Lecture 8),,Pattern; Loops,Easy
-Pattern 2 (Lecture 9),,Pattern; Loops,Easy
-Pattern 3 (Lecture 6),,Pattern; Loops,Easy
-Pattern 3 (Lecture 7),,Pattern; Loops,Easy
-Pattern 3 (Lecture 9),,Pattern; Loops,Easy
-Pattern 4 (Lecture 6),,Pattern; Loops,Easy
-Pattern 4 (Lecture 7),,Pattern; Loops,Easy
-Pattern 4 (Lecture 9),,Pattern; Loops,Easy
-Pattern 5 (Lecture 7),,Pattern; Loops,Easy
 Prime Number Check (More Optimized),Use tighter divisor bounds for a faster primality test.,Math; Number Theory,Easy
 Prime Number Check (Optimized),Check primality with a reduced set of candidate divisors.,Math; Number Theory,Easy
 Row Asymmetric Pattern 2,,Pattern; Loops,Easy
@@ -117,9 +97,6 @@ Measure 9 Minutes with 4 and 7 Minute Hourglasses,Use two hourglasses to measure
 Minimum Cuts for a 7-Unit Gold Bar,Split a gold bar with the fewest cuts so daily payments can be made exactly.,Logical Puzzle; Greedy; Math,Medium
 Number Diamond Mirror Pattern,,Pattern; Loops; Math,Medium
 Pascal Triangle Pattern,,Pattern; Loops; Math,Medium
-Pattern 4 (Lecture 14),,Pattern; Loops,Medium
-Pattern 5 (Lecture 9),,Pattern; Loops,Medium
-Pattern 6 (Lecture 9),,Pattern; Loops,Medium
 Spiral Print,Print a matrix in spiral order.,Matrix; Array; Simulation,Medium
 Swastik Pattern,,Pattern; Loops,Medium
 Camel and Bananas,Maximize bananas delivered when the camel consumes bananas while traveling.,Logical Puzzle; Greedy; Math,Hard

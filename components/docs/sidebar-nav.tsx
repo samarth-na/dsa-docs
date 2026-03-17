@@ -11,6 +11,8 @@ import { toPublicPath } from "@/lib/public-paths";
 type Props = {
   sections: NavSection[];
   currentPath: string;
+  isOpen?: boolean;
+  onClose?: () => void;
 };
 
 const ALL_QUESTIONS_FILTER = "__all__";
@@ -106,7 +108,7 @@ function questionMatchesFilter(href: string, filter: string): boolean {
   return href.includes(`/questions/${filter}/`);
 }
 
-export function SidebarNav({ sections, currentPath }: Props) {
+export function SidebarNav({ sections, currentPath, isOpen, onClose }: Props) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -117,7 +119,12 @@ export function SidebarNav({ sections, currentPath }: Props) {
     params.set("filter", filter);
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
     posthog.capture("question_filter_applied", { filter });
-  }, [pathname, searchParams, router]);
+    onClose?.();
+  }, [pathname, searchParams, router, onClose]);
+
+  const handleLinkClick = useCallback(() => {
+    onClose?.();
+  }, [onClose]);
 
   const renderedSections = useMemo(() => {
     const hasQuestionSections = sections.some((section) => section.label === "Question Types") && sections.some((section) => section.label === "Questions");
@@ -132,62 +139,80 @@ export function SidebarNav({ sections, currentPath }: Props) {
     });
   }, [sections, questionFilter]);
 
-  return (
-    <aside className="hidden h-[calc(100vh-3.5rem)] overflow-y-auto border-r border-[var(--border-soft)] bg-[var(--bg-sidebar)] px-4 py-7 lg:block">
-      <div className="space-y-7 pb-8">
-        {renderedSections.map((section) => (
-          <section key={section.label}>
-            <h2 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-secondary)]">
-              {section.label}
-            </h2>
-            <div className="space-y-0.5">
-              {section.items.map((item) => {
-                const uiLink = toPublicPath(item.link);
-                const active = isActive(pathname || toPublicPath(currentPath), uiLink);
-                const Icon = iconForItem(item.label, item.link);
-                const questionTypeFilter = section.label === "Question Types" ? filterFromQuestionTypeLink(item.link) : null;
+  const sidebarContent = (
+    <div className="space-y-7 pb-8">
+      {renderedSections.map((section) => (
+        <section key={section.label}>
+          <h2 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-secondary)]">
+            {section.label}
+          </h2>
+          <div className="space-y-0.5">
+            {section.items.map((item) => {
+              const uiLink = toPublicPath(item.link);
+              const active = isActive(pathname || toPublicPath(currentPath), uiLink);
+              const Icon = iconForItem(item.label, item.link);
+              const questionTypeFilter = section.label === "Question Types" ? filterFromQuestionTypeLink(item.link) : null;
 
-                if (questionTypeFilter) {
-                  const typeActive = questionFilter === questionTypeFilter;
-                  return (
-                    <button
-                      key={uiLink}
-                      type="button"
-                      onClick={() => handleFilterClick(questionTypeFilter)}
-                      className={clsx(
-                        "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-[15px] leading-6 transition",
-                        typeActive
-                          ? "bg-[color-mix(in_srgb,var(--brand-1)_16%,transparent)] text-[var(--brand-2)]"
-                          : "text-[var(--text-sidebar)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
-                      )}
-                    >
-                      <Icon className="h-4 w-4 shrink-0" />
-                      <span>{item.label}</span>
-                    </button>
-                  );
-                }
-
+              if (questionTypeFilter) {
+                const typeActive = questionFilter === questionTypeFilter;
                 return (
-                  <Link
+                  <button
                     key={uiLink}
-                    href={uiLink}
-                    onClick={() => posthog.capture("sidebar_link_clicked", { label: item.label, href: uiLink, section: section.label })}
+                    type="button"
+                    onClick={() => handleFilterClick(questionTypeFilter)}
                     className={clsx(
-                      "flex items-center gap-2 rounded-md px-3 py-1.5 text-[15px] leading-6 transition",
-                      active
+                      "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-[15px] leading-6 transition",
+                      typeActive
                         ? "bg-[color-mix(in_srgb,var(--brand-1)_16%,transparent)] text-[var(--brand-2)]"
                         : "text-[var(--text-sidebar)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
                     )}
                   >
                     <Icon className="h-4 w-4 shrink-0" />
                     <span>{item.label}</span>
-                  </Link>
+                  </button>
                 );
-              })}
-            </div>
-          </section>
-        ))}
+              }
+
+              return (
+                <Link
+                  key={uiLink}
+                  href={uiLink}
+                  onClick={() => {
+                    posthog.capture("sidebar_link_clicked", { label: item.label, href: uiLink, section: section.label });
+                    handleLinkClick();
+                  }}
+                  className={clsx(
+                    "flex items-center gap-2 rounded-md px-3 py-1.5 text-[15px] leading-6 transition",
+                    active
+                      ? "bg-[color-mix(in_srgb,var(--brand-1)_16%,transparent)] text-[var(--brand-2)]"
+                      : "text-[var(--text-sidebar)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
+                  )}
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      <aside className="hidden h-[calc(100vh-3.5rem)] overflow-y-auto border-r border-[var(--border-soft)] bg-[var(--bg-sidebar)] px-4 py-7 lg:block">
+        {sidebarContent}
+      </aside>
+      
+      <div
+        className={clsx(
+          "fixed inset-y-0 left-0 z-50 w-[280px] max-w-[80vw] transform overflow-y-auto border-r border-[var(--border-soft)] bg-[var(--bg-sidebar)] px-4 py-7 transition-transform duration-200 ease-in-out md:hidden",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        {sidebarContent}
       </div>
-    </aside>
+    </>
   );
 }

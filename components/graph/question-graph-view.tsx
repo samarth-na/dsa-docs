@@ -240,7 +240,9 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
   }
 
   function handleWheel(event: React.WheelEvent<SVGSVGElement>) {
-    event.preventDefault();
+    if (event.ctrlKey || event.metaKey) {
+      event.preventDefault();
+    }
     const point = getSvgPoint(event.clientX, event.clientY);
     if (!point) return;
 
@@ -374,7 +376,7 @@ export function QuestionGraphView({ matrixRows, catalogRows }: Props) {
           <svg
             ref={svgRef}
             viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-            className="h-[72vh] w-full"
+            className="h-[72vh] w-full touch-none"
             onWheel={handleWheel}
             onMouseMove={handleMouseMove}
             onMouseUp={endInteraction}
