@@ -1,0 +1,189 @@
+file,title,question,description,topic,difficulty,sample_input,expected_output,source_code
+column_asymmetric_pattern_4.md,Column Asymmetric Pattern 4,Column Asymmetric Pattern 4,,"Pattern, Loops",Easy,5,"        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *",lectures/Lecture_7/4_column_asymmetric_pattern_4.cpp
+column_symmetric_pattern_3.md,Column Symmetric Pattern 3,Column Symmetric Pattern 3,,"Pattern, Loops",Easy,5,"        * *
+      * * * *
+    * * * * * *
+  * * * * * * * *
+* * * * * * * * * *",lectures/Lecture_7/3_column_symmetric_pattern_3.cpp
+even_numbers_from_1_to_100.md,Even Numbers from 1 to 100,Even Numbers from 1 to 100,Print all even numbers in the range 1 to 100.,"Basic Programming, Loops",Basic,No stdin input. This source uses hardcoded values in main().,2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 ,lectures/Lecture_4/11_Even_numbers_from_1_to_100.cpp
+extra_border_and_diagonals_pattern.md,Extra Border and Diagonals Pattern,Extra Border and Diagonals Pattern,,"Pattern, Loops",Medium,5,"* * * * *
+* *   * *
+*   *   *
+* *   * *
+* * * * *",lectures/Lecture_10/1_Extra_question.cpp
+fibonacci_pattern.md,Fibonacci Pattern,Fibonacci Pattern,,"Pattern, Loops, Math",Medium,5,"0
+1 1
+2 3 5
+8 13 21 34
+55 89 144 233 377",lectures/Lecture_15/3_fibbonacci_pattern.cpp
+number_diamond_mirror_pattern.md,Number Diamond Mirror Pattern,Number Diamond Mirror Pattern,,"Pattern, Loops, Math",Medium,5,"1                 9
+2 8             8 2
+3 7 3         7 3 7
+4 6 4 6     6 4 6 4
+5 5 5 5 5 5 5 5 5 5
+6 4 6 4     4 6 4 6
+7 3 7         3 7 3
+8 2             2 8
+9                 1",lectures/Lecture_11/1_test.cpp
+pascal_triangle_pattern.md,Pascal Triangle Pattern,Pascal Triangle Pattern,,"Pattern, Loops, Math",Medium,5,"1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1",lectures/Lecture_17/1_Pascal_triangle.cpp
+pattern_1_lecture_5.md,Pattern 1 (Lecture 5),Pattern 1 (Lecture 5),,"Pattern, Loops",Basic,5,* * * * *,lectures/lecture_5/2_pattern_1_lec5.cpp
+pattern_1_lecture_6.md,Pattern 1 (Lecture 6),Pattern 1 (Lecture 6),,"Pattern, Loops",Basic,5,"* * * * *
+    * * * *
+        * * *
+            * *
+                *",lectures/Lecture_6/1_pattern_1_lec6.cpp
+pattern_1_lecture_7.md,Pattern 1 (Lecture 7),Pattern 1 (Lecture 7),,"Pattern, Loops",Easy,5,"*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*",lectures/Lecture_8/2_pattern_1_lec7.cpp
+pattern_1_lecture_8.md,Pattern 1 (Lecture 8),Pattern 1 (Lecture 8),,"Pattern, Loops",Easy,5,"* * * * *
+    * * * *
+        * * *
+            * *
+                *
+            * *
+        * * *
+    * * * *
+* * * * *",lectures/Lecture_9/3_pattern_1_lec8.cpp
+pattern_1_lecture_9.md,Pattern 1 (Lecture 9),Pattern 1 (Lecture 9),,"Pattern, Loops",Easy,5,"        1
+      2 2 2
+    3 3 3 3 3
+  4 4 4 4 4 4 4
+5 5 5 5 5 5 5 5 5",lectures/Lecture_10/3_pattern_1_lec9.cpp
+pattern_2_lecture_5.md,Pattern 2 (Lecture 5),Pattern 2 (Lecture 5),,"Pattern, Loops",Basic,5,"* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *",lectures/lecture_5/3_pattern_2_lec5.cpp
+pattern_2_lecture_6.md,Pattern 2 (Lecture 6),Pattern 2 (Lecture 6),,"Pattern, Loops",Easy,5,"        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *",lectures/Lecture_7/5_pattern_2_lec6.cpp
+pattern_2_lecture_7.md,Pattern 2 (Lecture 7),Pattern 2 (Lecture 7),,"Pattern, Loops",Easy,5,"        *
+      * *
+    * * *
+  * * * *
+* * * * *
+  * * * *
+    * * *
+      * *
+        *",lectures/Lecture_8/3_pattern_2_lec7.cpp
+pattern_2_lecture_8.md,Pattern 2 (Lecture 8),Pattern 2 (Lecture 8),,"Pattern, Loops",Easy,5,"* *     * *
+*         *
+
+*         *
+* *     * *",lectures/Lecture_10/2_pattern_2_lec8.cpp
+pattern_2_lecture_9.md,Pattern 2 (Lecture 9),Pattern 2 (Lecture 9),,"Pattern, Loops",Easy,5,"        1
+      2 3 4
+    5 6 7 8 9
+  10 11 12 13 14 15 16
+17 18 19 20 21 22 23 24 25",lectures/Lecture_10/4_pattern_2_lec9.cpp
+pattern_3_lecture_5.md,Pattern 3 (Lecture 5),Pattern 3 (Lecture 5),,"Pattern, Loops",Basic,5,"*
+* *
+* * *
+* * * *
+* * * * *",lectures/lecture_5/4_pattern_3_lec5.cpp
+pattern_3_lecture_6.md,Pattern 3 (Lecture 6),Pattern 3 (Lecture 6),,"Pattern, Loops",Easy,5,"* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *",lectures/Lecture_7/6_pattern_3_lec6.cpp
+pattern_3_lecture_7.md,Pattern 3 (Lecture 7),Pattern 3 (Lecture 7),,"Pattern, Loops",Easy,5,"    *
+  *   *
+*       *
+  *   *
+    *",lectures/Lecture_8/4_pattern_3_lec7.cpp
+pattern_3_lecture_9.md,Pattern 3 (Lecture 9),Pattern 3 (Lecture 9),,"Pattern, Loops",Easy,5,"        1
+      1 2 1
+    1 2 3 2 1
+  1 2 3 4 3 2 1
+1 2 3 4 5 4 3 2 1",lectures/Lecture_10/5_pattern_3_lec9.cpp
+pattern_4_lecture_14.md,Pattern 4 (Lecture 14),Pattern 4 (Lecture 14),,"Pattern, Loops",Medium,5,"1 1 1 1 1
+1 2 3 4 1
+1 3 6 3 1
+1 4 3 2 1
+1 1 1 1 1",lectures/Lecture_14/1_4_pattern.cpp
+pattern_4_lecture_5.md,Pattern 4 (Lecture 5),Pattern 4 (Lecture 5),,"Pattern, Loops",Basic,5,"        *
+      * *
+    * * *
+  * * * *
+* * * * *",lectures/lecture_5/5_pattern_4_lec5.cpp
+pattern_4_lecture_6.md,Pattern 4 (Lecture 6),Pattern 4 (Lecture 6),,"Pattern, Loops",Easy,5,"        *
+      * ! *
+    * ! * ! *
+  * ! * ! * ! *
+* ! * ! * ! * ! *",lectures/Lecture_8/1_pattern_4_lec6.cpp
+pattern_4_lecture_7.md,Pattern 4 (Lecture 7),Pattern 4 (Lecture 7),,"Pattern, Loops",Easy,5,"*               *
+* *           * *
+* * *       * * *
+* * * *   * * * *
+* * * * * * * * *",lectures/Lecture_9/1_pattern_4_lec7.cpp
+pattern_4_lecture_9.md,Pattern 4 (Lecture 9),Pattern 4 (Lecture 9),,"Pattern, Loops",Easy,5,"        1
+      2 3 2
+    3 4 5 4 3
+  4 5 6 7 6 5 4
+5 6 7 8 9 8 7 6 5",lectures/Lecture_10/6_pattern_4_lec9.cpp
+pattern_5_lecture_5.md,Pattern 5 (Lecture 5),Pattern 5 (Lecture 5),,"Pattern, Loops",Basic,5,"* * * * *
+  * * * *
+    * * *
+      * *
+        *",lectures/lecture_5/6_pattern_5_lec5.cpp
+pattern_5_lecture_7.md,Pattern 5 (Lecture 7),Pattern 5 (Lecture 7),,"Pattern, Loops",Easy,5,"* * * * * * * * *
+* * * *   * * * *
+* * *       * * *
+* *           * *
+*               *",lectures/Lecture_9/2_pattern_5_lec7.cpp
+pattern_5_lecture_9.md,Pattern 5 (Lecture 9),Pattern 5 (Lecture 9),,"Pattern, Loops",Medium,5,"5 4 3 2 *
+5 4 3 * 1
+5 4 * 2 1
+5 * 3 2 1
+* 4 3 2 1",lectures/Lecture_10/7_pattern_5_lec9.cpp
+pattern_6_lecture_9.md,Pattern 6 (Lecture 9),Pattern 6 (Lecture 9),,"Pattern, Loops",Medium,5,"1
+2 * 2
+3 * 3 * 3
+4 * 4 * 4 * 4
+5 * 5 * 5 * 5 * 5
+4 * 4 * 4 * 4
+3 * 3 * 3
+2 * 2
+1",lectures/Lecture_10/8_pattern_6_lec9.cpp
+row_asymmetric_pattern_2.md,Row Asymmetric Pattern 2,Row Asymmetric Pattern 2,,"Pattern, Loops",Easy,5,"*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*",lectures/Lecture_7/2_row_asymmetric_pattern_2.cpp
+row_symmetric_pattern_1.md,Row Symmetric Pattern 1,Row Symmetric Pattern 1,,"Pattern, Loops",Easy,5,"*
+* *
+* * *
+* * * *
+* * * * *
+* * * * *
+* * * *
+* * *
+* *
+*",lectures/Lecture_7/1_row_symmetric_pattern_1.cpp
+swastik_pattern.md,Swastik Pattern,Swastik Pattern,,"Pattern, Loops",Medium,7,"*  ****
+*  *
+*  *
+*******
+   *  *
+   *  *
+****  *",lectures/Lecture_17/2_swastik.cpp

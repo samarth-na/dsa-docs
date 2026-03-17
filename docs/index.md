@@ -7,41 +7,39 @@ sidebar:
 
 # DSA Sunstone
 
-Welcome to the DSA Sunstone documentation. This repo contains a comprehensive DSA (Data Structures & Algorithms) course with lecture notes, practice problems, and LeetCode solutions.
+Welcome to the DSA Sunstone docs website.
+The structure below follows the planned information architecture: Questions, Lectures, Topics, Lists, Resources, and Graph.
 
-## Quick Links
+## Main Sections
 
-- [Roadmap](roadmap.md) - Study path from basics to advanced
-- [Questions by Type](questions_by_type.md) - Problems organized by category
-- [LeetCode Study Plan](leetcode_study_plan.md) - Structured LeetCode practice
-- [Topic Cheatsheets](topic_wise_cheatsheets/) - Quick reference guides
+- [Questions](questions/) - Main question index and topic-wise/problem-wise docs
+- [Lectures](lectures/) - Lecture notes and lecture list
+- [Topics](topics/) - Topic cheatsheets for fast revision
+- [Lists](lists.md) - Consolidated question lists (catalog, type-wise, LeetCode)
+- [Graph](graph.md) - Question-topic graph model and filter behavior
 
-## Getting Started
+## Study Entry Points
 
-### New to DSA?
-Start with the [Study Roadmap](roadmap.md) which guides you through 8 phases from basic programming to interview-ready skills.
+- [Roadmap](roadmap.md) - End-to-end study path
+- [LeetCode Study Plan](leetcode_study_plan.md) - Structured LeetCode progression
+- [Master Index](master_index.md) - Topic -> lecture -> question mapping
 
-### Want LeetCode Practice?
-Check the [LeetCode Study Plan](leetcode_study_plan.md) for a structured approach from warm-up to hard problems.
+## CSV Lists
 
-### Need Quick Reference?
-Browse [Topic Cheatsheets](topic_wise_cheatsheets/) for:
-- Arrays
-- Strings
-- Patterns
-- Number Theory
-- Matrix
-- Two Pointers
-- Binary Search
+CSV lists are linked directly from this page:
 
-## Content Overview
+- [CSV Datasets Overview](csvs/) - Description and usage of all datasets
+- [All Questions CSV](csvs/question_catalog.csv)
+- [Pattern Questions CSV](csvs/patterns_questions.csv)
+- [LeetCode Questions CSV](csvs/leetcode_questions.csv)
+- [Question-Topic Matrix CSV](csvs/question_topic_matrix.csv)
 
-| Section | Description |
-|---------|-------------|
-| [Roadmap](roadmap.md) | 8-phase study plan with recommended order |
-| [Questions by Type](questions_by_type.md) | 400+ problems organized by topic and difficulty |
-| [LeetCode Study Plan](leetcode_study_plan.md) | 50+ LeetCode problems in learning order |
-| [Lecture Summaries](lecture_summaries/) | 37 lectures with notes and exercises |
-| [Topic Cheatsheets](topic_wise_cheatsheets/) | Quick pattern references |
-| [Question Catalog](question_catalog.csv) | Complete list of all questions |
-| [Placement Notes](Placement/) | OS, OOP, DBMS, CN for placements |
+## Graph Filters (Planned App Integration)
+
+The graph page is backed by CSV datasets and supports this filter model:
+
+- Topic filter
+- Difficulty filter
+- LeetCode-only toggle
+
+See [Question Graph](graph.md) for implementation details.

@@ -1,49 +1,200 @@
 {
-  "sidebar": [
-    {
-      "label": "Getting Started",
-      "items": [
-        { "label": "Home", "link": "/docs/" },
-        { "label": "Study Roadmap", "link": "/docs/roadmap" },
-        { "label": "Questions by Type", "link": "/docs/questions_by_type" }
-      ]
-    },
-    {
-      "label": "Practice",
-      "items": [
-        { "label": "LeetCode Study Plan", "link": "/docs/leetcode_study_plan" },
-        { "label": "LeetCode Questions", "link": "/docs/leetcode_questions" },
-        { "label": "Question Catalog", "link": "/docs/question_catalog" }
-      ]
-    },
-    {
-      "label": "Quick Reference",
-      "items": [
-        { "label": "Topic Cheatsheets", "link": "/docs/topic_wise_cheatsheets" },
-        { "label": "Arrays", "link": "/docs/topic_wise_cheatsheets/arrays" },
-        { "label": "Strings", "link": "/docs/topic_wise_cheatsheets/strings" },
-        { "label": "Patterns", "link": "/docs/topic_wise_cheatsheets/patterns" },
-        { "label": "Number Theory", "link": "/docs/topic_wise_cheatsheets/number_theory" },
-        { "label": "Matrix", "link": "/docs/topic_wise_cheatsheets/matrix" },
-        { "label": "Two Pointers", "link": "/docs/topic_wise_cheatsheets/two_pointers" },
-        { "label": "Binary Search", "link": "/docs/topic_wise_cheatsheets/binary_search" }
-      ]
-    },
-    {
-      "label": "Lectures",
-      "items": [
-        { "label": "Lecture Summaries", "link": "/docs/lecture_summaries" },
-        { "label": "Lecture 01-10", "link": "/docs/lecture_summaries/lecture_01" },
-        { "label": "Lecture 11-20", "link": "/docs/lecture_summaries/lecture_11" },
-        { "label": "Lecture 21-30", "link": "/docs/lecture_summaries/lecture_21" },
-        { "label": "Lecture 31-37", "link": "/docs/lecture_summaries/lecture_31" }
-      ]
-    },
-    {
-      "label": "Placement",
-      "items": [
-        { "label": "Placement Notes", "link": "/docs/Placement" }
-      ]
-    }
-  ]
+    "sidebar": [
+        {
+            "label": "Main",
+            "items": [
+                {
+                    "label": "Home",
+                    "link": "/docs/"
+                },
+                {
+                    "label": "Study Roadmap",
+                    "link": "/docs/roadmap"
+                }
+            ]
+        },
+        {
+            "label": "Questions",
+            "items": [
+                {
+                    "label": "All Questions",
+                    "link": "/docs/questions"
+                },
+                {
+                    "label": "Patterns",
+                    "link": "/docs/questions_by_type#pattern"
+                },
+                {
+                    "label": "LeetCode",
+                    "link": "/docs/questions_by_type#leetcode"
+                },
+                {
+                    "label": "Strings",
+                    "link": "/docs/questions_by_type#string"
+                },
+                {
+                    "label": "Arrays",
+                    "link": "/docs/questions_by_type#array"
+                },
+                {
+                    "label": "Basic",
+                    "link": "/docs/questions_by_type#basic-programming"
+                },
+                {
+                    "label": "Questions by Type",
+                    "link": "/docs/questions_by_type"
+                },
+                {
+                    "label": "LeetCode Questions",
+                    "link": "/docs/leetcode_questions"
+                },
+                {
+                    "label": "Question Catalog",
+                    "link": "/docs/question_catalog"
+                }
+            ]
+        },
+        {
+            "label": "Lectures",
+            "items": [
+                {
+                    "label": "Lectures",
+                    "link": "/docs/lectures"
+                },
+                {
+                    "label": "Lecture PDF Index",
+                    "link": "/docs/lectures/pdf_index"
+                },
+                {
+                    "label": "Master Index",
+                    "link": "/docs/master_index"
+                },
+                {
+                    "label": "Lecture 01-10",
+                    "link": "/docs/lectures/lecture_01"
+                },
+                {
+                    "label": "Lecture 11-20",
+                    "link": "/docs/lectures/lecture_11"
+                },
+                {
+                    "label": "Lecture 21-30",
+                    "link": "/docs/lectures/lecture_21"
+                },
+                {
+                    "label": "Lecture 31-37",
+                    "link": "/docs/lectures/lecture_31"
+                }
+            ]
+        },
+        {
+            "label": "Topics",
+            "items": [
+                {
+                    "label": "Topic Cheatsheets",
+                    "link": "/docs/topics"
+                },
+                {
+                    "label": "Arrays",
+                    "link": "/docs/topics/arrays"
+                },
+                {
+                    "label": "Strings",
+                    "link": "/docs/topics/strings"
+                },
+                {
+                    "label": "Patterns",
+                    "link": "/docs/topics/patterns"
+                },
+                {
+                    "label": "Number Theory",
+                    "link": "/docs/topics/number_theory"
+                },
+                {
+                    "label": "Matrix",
+                    "link": "/docs/topics/matrix"
+                },
+                {
+                    "label": "Two Pointers",
+                    "link": "/docs/topics/two_pointers"
+                },
+                {
+                    "label": "Binary Search",
+                    "link": "/docs/topics/binary_search"
+                }
+            ]
+        },
+        {
+            "label": "Lists",
+            "items": [
+                {
+                    "label": "Lists",
+                    "link": "/docs/lists"
+                },
+                {
+                    "label": "Study Plan",
+                    "link": "/docs/lists#study-plan"
+                },
+                {
+                    "label": "Cheatsheets",
+                    "link": "/docs/lists#cheatsheets"
+                },
+                {
+                    "label": "Questions by Type",
+                    "link": "/docs/lists#questions-by-type"
+                },
+                {
+                    "label": "Master Index",
+                    "link": "/docs/lists#master-index"
+                },
+                {
+                    "label": "Question Catalog",
+                    "link": "/docs/lists#question-catalog"
+                },
+                {
+                    "label": "Pattern Questions CSV",
+                    "link": "/docs/lists#pattern-questions-csv"
+                },
+                {
+                    "label": "LeetCode Questions",
+                    "link": "/docs/lists#leetcode-questions"
+                },
+                {
+                    "label": "Topic Matrix CSV",
+                    "link": "/docs/lists#topic-matrix-csv"
+                }
+            ]
+        },
+        {
+            "label": "Resources",
+            "items": [
+                {
+                    "label": "Resources",
+                    "link": "/docs/Placement"
+                }
+            ]
+        },
+        {
+            "label": "Graph",
+            "items": [
+                {
+                    "label": "Question Graph",
+                    "link": "/docs/graph"
+                }
+            ]
+        },
+        {
+            "label": "Planning",
+            "items": [
+                {
+                    "label": "Planning Docs",
+                    "link": "/docs/planning"
+                },
+                {
+                    "label": "Implementation Plan",
+                    "link": "/docs/planning/implementation_plan"
+                }
+            ]
+        }
+    ]
 }

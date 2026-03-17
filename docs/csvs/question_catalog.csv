@@ -1,0 +1,127 @@
+Title,Description,Topics,Difficulty
+Add Two Numbers,Read two numbers and print their sum.,Basic Programming; Math,Basic
+Check Whether a Number is Odd or Even,Decide whether an integer is odd or even.,Basic Programming; Conditionals; Math,Basic
+Even Numbers from 1 to 100,Print all even numbers in the range 1 to 100.,Basic Programming; Loops,Basic
+Factorial of a Number,Calculate the factorial of a non-negative integer.,Basic Programming; Loops; Math,Basic
+Find Value in Vector,Search for a target value in a vector.,Array; Searching,Basic
+GCD Brute Force,Find the greatest common divisor by checking factors directly.,Math; Number Theory,Basic
+GCD Reverse Brute Force,Scan downward from the smaller number to find the GCD.,Math; Number Theory,Basic
+Grade Card Program,Map marks to a grade using conditional logic.,Basic Programming; Conditionals,Basic
+Lottery Game,Choose a reward based on the input number range.,Basic Programming; Conditionals,Basic
+Maximum Element in Array,Find the largest element in an array.,Array; Searching,Basic
+Maximum of Three Numbers,Find the largest among three given numbers.,Basic Programming; Conditionals,Basic
+Maximum of Two Numbers,Compare two inputs and print the larger value.,Basic Programming; Conditionals,Basic
+Minimum Element in Array,Find the smallest element in an array.,Array; Searching,Basic
+Multiplication Table of 7,Print the multiplication table of 7.,Basic Programming; Loops; Math,Basic
+Pattern 1 (Lecture 5),,Pattern; Loops,Basic
+Pattern 1 (Lecture 6),,Pattern; Loops,Basic
+Pattern 2 (Lecture 5),,Pattern; Loops,Basic
+Pattern 3 (Lecture 5),,Pattern; Loops,Basic
+Pattern 4 (Lecture 5),,Pattern; Loops,Basic
+Pattern 5 (Lecture 5),,Pattern; Loops,Basic
+Prime Number Check,Test primality with the straightforward divisor check.,Math; Number Theory,Basic
+Print Counting from 1 to N,Print numbers from 1 up to N.,Basic Programming; Loops,Basic
+Reverse a Number,Reverse the digits of an integer.,Basic Programming; Loops; Digit Manipulation; Math,Basic
+Simple Interest Calculation,"Compute simple interest from principal, rate, and time.",Basic Programming; Math,Basic
+Sum of Array Elements,Compute the total sum of all elements in an array.,Array,Basic
+Sum of Digits,Add all digits of an integer.,Basic Programming; Loops; Digit Manipulation; Math,Basic
+Sum of N Natural Numbers,Compute the sum of the first N natural numbers.,Basic Programming; Loops; Math,Basic
+Armstrong Number,Check whether a number equals the sum of powers of its digits.,Math; Digit Manipulation,Easy
+Binary to Decimal,Convert a binary number into decimal form.,Math; Base Conversion; Digit Manipulation,Easy
+Bubble Sort,Sort an array by repeatedly swapping adjacent out-of-order elements.,Array; Sorting,Easy
+Column Asymmetric Pattern 4,,Pattern; Loops,Easy
+Column Symmetric Pattern 3,,Pattern; Loops,Easy
+Decimal to Binary,Convert a decimal number into its binary representation.,Math; Base Conversion; Digit Manipulation,Easy
+Fibonacci Number,Compute the nth Fibonacci number recursively.,Recursion; Math,Easy
+Fibonacci Series,Print or generate the Fibonacci sequence up to the requested count.,Loops; Math,Easy
+GCD Using Euclidean Algorithm,Use repeated remainder reduction to compute the GCD efficiently.,Math; Number Theory,Easy
+GCD Using STL,Use the standard library gcd helper to compute the answer.,Math; Number Theory,Easy
+Insertion Sort,Build a sorted prefix by inserting each new value into place.,Array; Sorting,Easy
+LeetCode 1 - Two Sum,Find two indices whose values add up to the target.,LeetCode; Array; Hashing,Easy
+LeetCode 118 - Pascal's Triangle,Generate the first numRows of Pascal's triangle.,LeetCode; Array; Dynamic Programming; Math,Easy
+LeetCode 125 - Valid Palindrome,Check whether a string is a palindrome after filtering non-alphanumerics.,LeetCode; String; Two Pointers,Easy
+LeetCode 1572 - Matrix Diagonal Sum,Add the primary and secondary diagonal values of a square matrix.,LeetCode; Matrix; Math,Easy
+LeetCode 167 - Two Sum II - Input Array Is Sorted,Find two indices in a sorted array whose values sum to the target.,LeetCode; Array; Two Pointers,Easy
+LeetCode 1678 - Goal Parser Interpretation,Interpret the Goal Parser command string.,LeetCode; String; Simulation,Easy
+LeetCode 169 - Majority Element,Return the element that appears more than n/2 times.,LeetCode; Array; Math,Easy
+LeetCode 1991 - Find the Middle Index in Array,Return an index whose left and right sums are equal.,LeetCode; Array; Prefix Sum,Easy
+LeetCode 202 - Happy Number,Repeat square-digit sums to determine whether the sequence reaches 1.,LeetCode; Math; Number Theory; Simulation,Easy
+LeetCode 242 - Valid Anagram,Check whether two strings are anagrams of each other.,LeetCode; String; Hashing,Easy
+LeetCode 2529 - Maximum Count of Positive Integer and Negative Integer,Count positive and negative values and return the larger count.,LeetCode; Array; Binary Search,Easy
+LeetCode 26 - Remove Duplicates from Sorted Array,Compress a sorted array in place so each value appears once.,LeetCode; Array; Two Pointers,Easy
+LeetCode 27 - Remove Element,Remove all instances of a target value in place.,LeetCode; Array; Two Pointers,Easy
+LeetCode 283 - Move Zeroes,Move all zeroes to the end while keeping non-zero order.,LeetCode; Array; Two Pointers,Easy
+LeetCode 3110 - Score of a String,Sum absolute ASCII differences between adjacent characters.,LeetCode; String,Easy
+LeetCode 344 - Reverse String,Reverse a character array in place.,LeetCode; String; Two Pointers,Easy
+LeetCode 3658 - GCD of Odd and Even Sums,Compute a gcd value derived from odd and even sums.,LeetCode; Math; Number Theory,Easy
+LeetCode 389 - Find the Difference,Find the extra character added to one string.,LeetCode; String; Hashing,Easy
+LeetCode 557 - Reverse Words in a String III,Reverse every word in a sentence while preserving word order.,LeetCode; String; Two Pointers,Easy
+LeetCode 566 - Reshape the Matrix,Reshape matrix dimensions without changing element order.,LeetCode; Matrix; Simulation,Easy
+LeetCode 58 - Length of Last Word,Return the length of the final word in a string.,LeetCode; String,Easy
+LeetCode 66 - Plus One,Add one to a large integer stored as an array of digits.,LeetCode; Array; Math; Simulation,Easy
+LeetCode 704 - Binary Search,Find a target index in a sorted array with binary search.,LeetCode; Array; Binary Search,Easy
+LeetCode 724 - Find Pivot Index,Return the index where left sum and right sum are equal.,LeetCode; Array; Prefix Sum,Easy
+LeetCode 88 - Merge Sorted Array,Merge two sorted arrays into the first array in place.,LeetCode; Array; Two Pointers; Sorting,Easy
+LeetCode 896 - Monotonic Array,Check whether the array is entirely non-decreasing or non-increasing.,LeetCode; Array,Easy
+LeetCode 9 - Palindrome Number,Check whether an integer reads the same forward and backward.,LeetCode; Math; Digit Manipulation,Easy
+Lottery Game Part 2,Use nested conditions to print a reward and its variant.,Basic Programming; Conditionals,Easy
+Merge Two Sorted Arrays,Merge two sorted arrays into one sorted result.,Array; Two Pointers; Sorting,Easy
+Pattern 1 (Lecture 7),,Pattern; Loops,Easy
+Pattern 1 (Lecture 8),,Pattern; Loops,Easy
+Pattern 1 (Lecture 9),,Pattern; Loops,Easy
+Pattern 2 (Lecture 6),,Pattern; Loops,Easy
+Pattern 2 (Lecture 7),,Pattern; Loops,Easy
+Pattern 2 (Lecture 8),,Pattern; Loops,Easy
+Pattern 2 (Lecture 9),,Pattern; Loops,Easy
+Pattern 3 (Lecture 6),,Pattern; Loops,Easy
+Pattern 3 (Lecture 7),,Pattern; Loops,Easy
+Pattern 3 (Lecture 9),,Pattern; Loops,Easy
+Pattern 4 (Lecture 6),,Pattern; Loops,Easy
+Pattern 4 (Lecture 7),,Pattern; Loops,Easy
+Pattern 4 (Lecture 9),,Pattern; Loops,Easy
+Pattern 5 (Lecture 7),,Pattern; Loops,Easy
+Prime Number Check (More Optimized),Use tighter divisor bounds for a faster primality test.,Math; Number Theory,Easy
+Prime Number Check (Optimized),Check primality with a reduced set of candidate divisors.,Math; Number Theory,Easy
+Row Asymmetric Pattern 2,,Pattern; Loops,Easy
+Row Symmetric Pattern 1,,Pattern; Loops,Easy
+Selection Sort,Sort an array by repeatedly choosing the minimum remaining element.,Array; Sorting,Easy
+Wave Print by Column,Traverse a matrix column by column in alternating directions.,Matrix; Array,Easy
+Boston Number,Compare digit sum with prime factor digit sums to classify a Boston number.,Math; Number Theory; Digit Manipulation,Medium
+Bridge and Torch Crossing,Find the minimum total time to move four people across a bridge with one torch.,Logical Puzzle; Greedy,Medium
+Chewbacca Number,Transform each digit with 9-digit minimization rules to get the smallest number.,Math; Digit Manipulation; Greedy,Medium
+Chocolate Wrapper Exchange,Maximize chocolates when wrappers can be exchanged for free pieces.,Logical Puzzle; Math; Simulation,Medium
+Convert Any Base to Any Base,Convert a number from one base to another through decimal conversion.,Math; Base Conversion; Digit Manipulation,Medium
+Extra Border and Diagonals Pattern,,Pattern; Loops,Medium
+Fibonacci Pattern,,Pattern; Loops; Math,Medium
+Inverse of Number,Invert the position-value relationship of the digits.,Math; Digit Manipulation,Medium
+LeetCode 134 - Gas Station,Find the start station that allows completing the circular route.,LeetCode; Array; Greedy,Medium
+LeetCode 1492 - The Kth Factor of N,Return the kth smallest factor of n or -1 if it does not exist.,LeetCode; Math; Number Theory,Medium
+LeetCode 15 - 3Sum,Find all unique triplets whose sum is zero.,LeetCode; Array; Two Pointers; Sorting,Medium
+LeetCode 151 - Reverse Words in a String,Reverse the order of words while trimming extra spaces.,LeetCode; String; Two Pointers,Medium
+LeetCode 189 - Rotate Array,Rotate an array to the right by k positions.,LeetCode; Array; Two Pointers,Medium
+LeetCode 238 - Product of Array Except Self,Build the product for each index without using the value at that index.,LeetCode; Array,Medium
+LeetCode 31 - Next Permutation,Rearrange numbers into the next lexicographically greater permutation.,LeetCode; Array; Two Pointers; Greedy,Medium
+LeetCode 48 - Rotate Image,Rotate an n x n matrix by 90 degrees in place.,LeetCode; Matrix,Medium
+LeetCode 498 - Diagonal Traverse,Traverse a matrix diagonally in alternating directions.,LeetCode; Matrix; Simulation,Medium
+LeetCode 53 - Maximum Subarray,Find the contiguous subarray with the maximum sum.,LeetCode; Array; Dynamic Programming,Medium
+LeetCode 54 - Spiral Matrix,Return all matrix elements in spiral order.,LeetCode; Matrix; Simulation,Medium
+LeetCode 59 - Spiral Matrix II,Generate an n x n matrix filled in spiral order.,LeetCode; Matrix; Simulation,Medium
+LeetCode 7 - Reverse Integer,Reverse the digits of a signed integer with overflow handling.,LeetCode; Math; Digit Manipulation,Medium
+LeetCode 73 - Set Matrix Zeroes,Zero out matrix rows and columns that contain a zero.,LeetCode; Matrix,Medium
+LeetCode 74 - Search a 2D Matrix,Search a sorted 2D matrix for a target value.,LeetCode; Matrix; Binary Search,Medium
+LeetCode 75 - Sort Colors,"Sort an array of 0s, 1s, and 2s in one pass.",LeetCode; Array; Two Pointers; Sorting,Medium
+LeetCode 80 - Remove Duplicates from Sorted Array II,Keep at most two occurrences of each value in a sorted array.,LeetCode; Array; Two Pointers,Medium
+LeetCode 877 - Stone Game,Determine whether the first player can win the stone-picking game.,LeetCode; Array; Game Theory; Dynamic Programming,Medium
+Matrix Multiplication,Combine two matrices to produce a result matrix.,Matrix; Math,Medium
+Measure 9 Minutes with 4 and 7 Minute Hourglasses,Use two hourglasses to measure exactly nine minutes.,Logical Puzzle; Simulation,Medium
+Minimum Cuts for a 7-Unit Gold Bar,Split a gold bar with the fewest cuts so daily payments can be made exactly.,Logical Puzzle; Greedy; Math,Medium
+Number Diamond Mirror Pattern,,Pattern; Loops; Math,Medium
+Pascal Triangle Pattern,,Pattern; Loops; Math,Medium
+Pattern 4 (Lecture 14),,Pattern; Loops,Medium
+Pattern 5 (Lecture 9),,Pattern; Loops,Medium
+Pattern 6 (Lecture 9),,Pattern; Loops,Medium
+Spiral Print,Print a matrix in spiral order.,Matrix; Array; Simulation,Medium
+Swastik Pattern,,Pattern; Loops,Medium
+Camel and Bananas,Maximize bananas delivered when the camel consumes bananas while traveling.,Logical Puzzle; Greedy; Math,Hard
+LeetCode 4 - Median of Two Sorted Arrays,Find the median of two sorted arrays in logarithmic-style search.,LeetCode; Array; Binary Search,Hard
+LeetCode 42 - Trapping Rain Water,Compute how much water can be trapped between elevation bars.,LeetCode; Array; Two Pointers,Hard

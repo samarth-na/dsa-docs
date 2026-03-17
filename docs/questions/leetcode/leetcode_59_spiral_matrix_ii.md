@@ -1,0 +1,93 @@
+## LeetCode 59 - Spiral Matrix II
+
+### Question
+LeetCode 59 - Spiral Matrix II
+
+### Description
+
+Generate an n x n matrix filled in spiral order. Aim for a correct and efficient implementation, and explain the core idea and edge-case handling.
+
+### Topic
+LeetCode, Matrix, Simulation
+
+### Difficulty
+Medium
+
+### Input
+```text
+No stdin input. This source uses hardcoded values in main().
+```
+
+### Output
+```text
+1 2 3 
+8 9 4 
+7 6 5 
+```
+
+### Code
+Source: `lectures/LeetCode/59.cpp`
+
+```cpp
+#include <iostream>
+#include<vector>
+using namespace std;
+
+vector<vector<int>> generateMatrix(int n)
+{
+    vector<vector<int>> arr(n, vector<int>(n));
+    int left = 0, right = n - 1, top = 0, bottom = n - 1, val = 1;
+    while (left <= right and top <= bottom)
+    {
+        // left to right
+        for (int i = left; i <= right; i++)
+        {
+            // top
+            arr[top][i] = val;
+            val++;
+        }
+        top++;
+        // top to bottom
+        for (int i = top; i <= bottom; i++)
+        {
+            // right
+            arr[i][right] = val;
+            val++;
+        }
+        right--;
+        if (top <= bottom)
+        {
+            // right to left
+            for (int i = right; i >= left; i--)
+            {
+                arr[bottom][i] = val;
+                val++;
+            }
+            bottom--;
+        }
+        if (left <= right)
+        {
+            // bottom to top
+            for (int i = bottom; i >= top; i--)
+            {
+                arr[i][left] = val;
+                val++;
+            }
+        }
+        left++;
+    }
+    return arr;
+}
+int main()
+{
+    int n = 3;
+    vector<vector<int>> result = generateMatrix(n);
+    for(auto row : result) {
+        for(int val : row) {
+            cout << val << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```

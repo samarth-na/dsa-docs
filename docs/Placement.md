@@ -13,14 +13,13 @@ PDF notes for campus placement preparation.
 
 | Subject | File |
 |---------|------|
-| Operating System Notes | [Download PDF](./notes/Operating%20System%20Notes.pdf) |
-| Object Oriented Programming | [Download PDF](./notes/Object%20Oriented%20Programming.pdf) |
-| DBMS Notes | [Download PDF](./notes/DBMS_Notes.pdf) |
-| Computer Networking | [Download PDF](./notes/Computer%20Networking%20Notes%20for%20Tech%20Placements.pdf) |
+| Operating System Notes | [Download PDF](./resouces/Operating%20System%20Notes.pdf) |
+| Object Oriented Programming | [Download PDF](./resouces/Object%20Oriented%20Programming.pdf) |
+| DBMS Notes | [Download PDF](./resouces/DBMS_Notes.pdf) |
+| Computer Networking | [Download PDF](./resouces/Computer%20Networking%20Notes%20for%20Tech%20Placements.pdf) |
 
 ## Lecture Notes
 
-| Lecture | File |
-|---------|------|
-| Lecture 1-10 | [Download PDF](./notes/lecture%201.pdf) - [lecture 10](./notes/lecture%2010.pdf) |
-| Lecture 11-22 | [Download PDF](./notes/lecture%2011.pdf) - [lecture 22](./notes/lecture%2022.pdf) |
+Lecture PDF bundles are maintained in the lecture repo/workspace and are not available in this docs-only repository.
+
+Use [Lectures](./lectures/) for markdown lecture notes in this site.

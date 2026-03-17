@@ -5,7 +5,7 @@
   --bg-page: #ffffff;
   --bg-sidebar: #f8fafc;
   --bg-surface: #f1f5f9;
-  --bg-inline-code: #eef2ff;
+  --bg-inline-code: color-mix(in srgb, var(--bg-surface) 95%, black);
   --border-soft: #d9e1ec;
   --text-primary: #111827;
   --text-secondary: #4b5563;
@@ -20,7 +20,7 @@
   --bg-page: #202125;
   --bg-sidebar: #22242a;
   --bg-surface: #292b31;
-  --bg-inline-code: color-mix(in srgb, var(--bg-surface) 75%, black);
+  --bg-inline-code: color-mix(in srgb, var(--bg-surface) 95%, black);
   --border-soft: #3a3d45;
   --text-primary: #f5f6fa;
   --text-secondary: #b2b3bf;
@@ -40,6 +40,86 @@ body {
   background: var(--bg-canvas);
   color: var(--text-primary);
   font-family: var(--font-inter), sans-serif;
+}
+
+.hljs {
+  color: var(--text-primary);
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-type,
+.hljs-literal,
+.hljs-number,
+.hljs-attr,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #3b82f6;
+}
+
+.hljs-string,
+.hljs-doctag,
+.hljs-quote,
+.hljs-regexp,
+.hljs-addition {
+  color: #16a34a;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #d97706;
+}
+
+.hljs-comment,
+.hljs-meta,
+.hljs-deletion {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .hljs-keyword,
+[data-theme="dark"] .hljs-selector-tag,
+[data-theme="dark"] .hljs-built_in,
+[data-theme="dark"] .hljs-name,
+[data-theme="dark"] .hljs-type,
+[data-theme="dark"] .hljs-literal,
+[data-theme="dark"] .hljs-number,
+[data-theme="dark"] .hljs-attr,
+[data-theme="dark"] .hljs-template-variable,
+[data-theme="dark"] .hljs-selector-id,
+[data-theme="dark"] .hljs-selector-class,
+[data-theme="dark"] .hljs-selector-attr,
+[data-theme="dark"] .hljs-selector-pseudo {
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .hljs-string,
+[data-theme="dark"] .hljs-doctag,
+[data-theme="dark"] .hljs-quote,
+[data-theme="dark"] .hljs-regexp,
+[data-theme="dark"] .hljs-addition {
+  color: #86efac;
+}
+
+[data-theme="dark"] .hljs-title,
+[data-theme="dark"] .hljs-section,
+[data-theme="dark"] .hljs-symbol,
+[data-theme="dark"] .hljs-bullet,
+[data-theme="dark"] .hljs-link {
+  color: #fcd34d;
+}
+
+[data-theme="dark"] .hljs-comment,
+[data-theme="dark"] .hljs-meta,
+[data-theme="dark"] .hljs-deletion {
+  color: #9ca3af;
 }
 
 ::selection {

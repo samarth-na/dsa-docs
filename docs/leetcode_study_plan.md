@@ -187,10 +187,11 @@ If you want the shortest useful sequence, do these first:
 6. Greedy problems
 7. Hard questions: `4` and `42`
 
-## Use With Repo Docs
+## Use With
 
 Pair this plan with:
-- `docs/questions_by_type.md`
-- `docs/question_catalog.csv`
-- `docs/topic_wise_cheatsheets/README.md`
-- `docs/lecture_summaries/README.md`
+- [Questions by Type](questions_by_type.md)
+- [Question Catalog](question_catalog.md)
+- [Topic Cheatsheets](topics/README.md)
+- [Lectures](lectures/README.md)
+- [Master Index](master_index.md)

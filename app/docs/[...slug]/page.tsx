@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 import { DocsShell } from "@/components/docs/docs-shell";
 import { MdxContent } from "@/components/docs/mdx-content";
-import { getAllDocSlugs, getDocPageBySlug } from "@/lib/docs";
+import { QuestionGraphView } from "@/components/graph/question-graph-view";
+import { getAllDocSlugs, getDocPageBySlug, getQuestionCatalog, getQuestionTopicMatrix } from "@/lib/docs";
+
+export const dynamic = "force-static";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -18,9 +21,14 @@ export default async function DocSlugPage({ params }: Props) {
     notFound();
   }
 
+  const isGraphPage = slug.length === 1 && slug[0] === "graph";
+  const matrixRows = isGraphPage ? getQuestionTopicMatrix() : [];
+  const catalogRows = isGraphPage ? getQuestionCatalog() : [];
+
   return (
     <DocsShell toc={page.toc} currentPath={`/docs/${slug.join("/")}`}>
-      <MdxContent source={page.content} />
+      {!isGraphPage ? <MdxContent source={page.content} linkBasePath={page.sourcePath} /> : null}
+      {isGraphPage ? <QuestionGraphView matrixRows={matrixRows} catalogRows={catalogRows} /> : null}
     </DocsShell>
   );
 }

@@ -85,7 +85,7 @@ Core ideas:
 - Trace a pattern row by row before coding
 
 Questions to revise:
-- Pattern 1-6 across lecture files
+ - Pattern set: see `docs/questions/patterns/` (individual pattern writeups)
 - Row Symmetric Pattern 1
 - Row Asymmetric Pattern 2
 - Column Symmetric Pattern 3

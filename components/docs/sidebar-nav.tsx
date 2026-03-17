@@ -1,12 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import { clsx } from "clsx";
-import type { ReactElement } from "react";
+import { useMemo, useCallback, type ReactElement } from "react";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import type { NavSection } from "@/lib/docs";
+import { toPublicPath } from "@/lib/public-paths";
 
 type Props = {
   sections: NavSection[];
   currentPath: string;
 };
+
+const ALL_QUESTIONS_FILTER = "__all__";
 
 type IconProps = { className?: string };
 
@@ -79,23 +85,90 @@ function isActive(path: string, href: string): boolean {
   return path === href || path.startsWith(`${href}/`);
 }
 
+function filterFromPath(path: string): string {
+  const match = path.match(/\/questions\/([^/?#]+)/);
+  if (!match) return ALL_QUESTIONS_FILTER;
+  return match[1] || ALL_QUESTIONS_FILTER;
+}
+
+function filterFromQuestionTypeLink(link: string): string | null {
+  const uiLink = toPublicPath(link);
+  if (uiLink === "/questions") return ALL_QUESTIONS_FILTER;
+
+  const match = uiLink.match(/^\/questions\/([^/?#]+)$/);
+  if (!match) return null;
+  return match[1] || ALL_QUESTIONS_FILTER;
+}
+
+function questionMatchesFilter(href: string, filter: string): boolean {
+  if (filter === ALL_QUESTIONS_FILTER) return true;
+  return href.includes(`/questions/${filter}/`);
+}
+
 export function SidebarNav({ sections, currentPath }: Props) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const questionFilter = searchParams.get("filter") || filterFromPath(pathname || currentPath);
+
+  const handleFilterClick = useCallback((filter: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("filter", filter);
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  }, [pathname, searchParams, router]);
+
+  const renderedSections = useMemo(() => {
+    const hasQuestionSections = sections.some((section) => section.label === "Question Types") && sections.some((section) => section.label === "Questions");
+    if (!hasQuestionSections) return sections;
+
+    return sections.map((section) => {
+      if (section.label !== "Questions") return section;
+      return {
+        ...section,
+        items: section.items.filter((item) => questionMatchesFilter(toPublicPath(item.link), questionFilter))
+      };
+    });
+  }, [sections, questionFilter]);
+
   return (
-    <aside className="hidden h-[calc(100vh-3.5rem)] border-r border-[var(--border-soft)] bg-[var(--bg-sidebar)] px-4 py-7 lg:block">
-      <div className="space-y-7">
-        {sections.map((section) => (
+    <aside className="hidden h-[calc(100vh-3.5rem)] overflow-y-auto border-r border-[var(--border-soft)] bg-[var(--bg-sidebar)] px-4 py-7 lg:block">
+      <div className="space-y-7 pb-8">
+        {renderedSections.map((section) => (
           <section key={section.label}>
             <h2 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-secondary)]">
               {section.label}
             </h2>
             <div className="space-y-0.5">
               {section.items.map((item) => {
-                const active = isActive(currentPath, item.link);
+                const uiLink = toPublicPath(item.link);
+                const active = isActive(pathname || toPublicPath(currentPath), uiLink);
                 const Icon = iconForItem(item.label, item.link);
+                const questionTypeFilter = section.label === "Question Types" ? filterFromQuestionTypeLink(item.link) : null;
+
+                if (questionTypeFilter) {
+                  const typeActive = questionFilter === questionTypeFilter;
+                  return (
+                    <button
+                      key={uiLink}
+                      type="button"
+                      onClick={() => handleFilterClick(questionTypeFilter)}
+                      className={clsx(
+                        "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-[15px] leading-6 transition",
+                        typeActive
+                          ? "bg-[color-mix(in_srgb,var(--brand-1)_16%,transparent)] text-[var(--brand-2)]"
+                          : "text-[var(--text-sidebar)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
+                      )}
+                    >
+                      <Icon className="h-4 w-4 shrink-0" />
+                      <span>{item.label}</span>
+                    </button>
+                  );
+                }
+
                 return (
                   <Link
-                    key={item.link}
-                    href={item.link}
+                    key={uiLink}
+                    href={uiLink}
                     className={clsx(
                       "flex items-center gap-2 rounded-md px-3 py-1.5 text-[15px] leading-6 transition",
                       active

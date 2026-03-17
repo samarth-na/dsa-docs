@@ -3,10 +3,11 @@ import { clsx } from "clsx";
 import { ThemeToggle } from "@/components/docs/theme-toggle";
 
 const links = [
-  { href: "/docs", label: "Guide" },
-  { href: "/docs/roadmap", label: "Config" },
-  { href: "/docs/question_catalog", label: "CSV" },
-  { href: "/docs/Placement", label: "Resources" }
+  { href: "/questions", label: "Questions" },
+  { href: "/lectures", label: "Lectures" },
+  { href: "/topics", label: "Topics" },
+  { href: "/lists", label: "Lists" },
+  { href: "/graph", label: "Graph" }
 ];
 
 type Props = {
@@ -21,7 +22,7 @@ export function TopNav({ currentPath }: Props) {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--bg-page)]">
       <div className="mx-auto flex h-14 w-full max-w-[1600px] items-center justify-between px-3 sm:px-4 md:px-6">
-        <Link href="/docs" className="group flex items-center gap-2">
+        <Link href="/" className="group flex items-center gap-2">
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--bg-surface)] text-xs font-bold text-[var(--brand-2)]">
             D
           </span>
@@ -48,7 +49,7 @@ export function TopNav({ currentPath }: Props) {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link
-            href="/docs"
+            href="/"
             className="rounded-md border border-[var(--border-soft)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)] md:hidden"
           >
             Menu
