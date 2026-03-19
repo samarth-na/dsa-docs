@@ -345,35 +345,14 @@ export function getDocPageBySlug(slug: string[]): DocPage | null {
     const resolvedSlug = resolveListAliasSlug(slug);
 
     if (resolvedSlug.join("/") === "questions") {
-        const titleToLink = getQuestionTitleLinkMap();
-        const rows = getQuestionCatalog();
-        const lines: string[] = [
-            "# Questions",
-            "",
-            "All questions from the catalog CSV.",
-            "",
-            "| Question | Types | Difficulty | Description |",
-            "|---|---|---|---|",
-            ...rows.map((row) => {
-                const link = resolveQuestionLinkByName(
-                    row.Question ?? "",
-                    titleToLink,
-                );
-                const questionCell = link
-                    ? `[${escapeMdCell(row.Question ?? "")}](${link})`
-                    : escapeMdCell(row.Question ?? "");
-
-                return `| ${questionCell} | ${escapeMdCell(row.Types ?? "")} | ${escapeMdCell(row.Difficulty ?? "")} | ${escapeMdCell(row.Description ?? "")} |`;
-            }),
-        ];
-        const content = lines.join("\n");
+        const content = "# Questions\n\nSelect a question via the sidebar. You can filter by topics using the type filters.";
 
         return {
             slug,
             title: "Questions",
             content,
-            toc: extractToc(content),
-            description: "All questions from question_catalog.csv",
+            toc: [],
+            description: "Browse questions via the sidebar",
             sourcePath: `/docs/${resolvedSlug.join("/")}.md`,
         };
     }
