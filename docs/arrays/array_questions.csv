@@ -1,0 +1,51 @@
+Question Name,LeetCode Number,Concepts Involved,Difficulty,LeetCode Link
+Two Sum,1,Hash Map; Two Pointers,Easy,https://leetcode.com/problems/two-sum/
+Median of Two Sorted Arrays,4,Binary Search; Divide and Conquer,Hard,https://leetcode.com/problems/median-of-two-sorted-arrays/
+Reverse Integer,7,Math,Easy,https://leetcode.com/problems/reverse-integer/
+String to Integer (atoi),8,String Manipulation,Medium,https://leetcode.com/problems/string-to-integer-atoi/
+Palindrome Number,9,Math,Easy,https://leetcode.com/problems/palindrome-number/
+3Sum,15,Two Pointers; Array Sorting,Medium,https://leetcode.com/problems/3sum/
+Remove Duplicates from Sorted Array,26,Two Pointers,Easy,https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+Remove Element,27,Two Pointers,Easy,https://leetcode.com/problems/remove-element/
+Next Permutation,31,Two Pointers;Math,Medium,https://leetcode.com/problems/next-permutation/
+Trapping Rain Water,42,Two Pointers;Stack,Hard,https://leetcode.com/problems/trapping-rain-water/
+Rotate Image,48,Matrix,Medium,https://leetcode.com/problems/rotate-image/
+Maximum Subarray,53,Dynamic Programming; Divide and Conquer,Medium,https://leetcode.com/problems/maximum-subarray/
+Spiral Matrix,54,Matrix; Simulation,Medium,https://leetcode.com/problems/spiral-matrix/
+Length of Last Word,58,String Manipulation,Easy,https://leetcode.com/problems/length-of-last-word/
+Spiral Matrix II,59,Matrix,Easy,https://leetcode.com/problems/spiral-matrix-ii/
+Plus One,66,Math,Easy,https://leetcode.com/problems/plus-one/
+Set Matrix Zeroes,73,Matrix,Medium,https://leetcode.com/problems/set-matrix-zeroes/
+Search a 2D Matrix,74,Binary Search;Matrix,Medium,https://leetcode.com/problems/search-a-2d-matrix/
+Sort Colors,75,Two Pointers;Sorting,Medium,https://leetcode.com/problems/sort-colors/
+Remove Duplicates from Sorted Array II,80,Two Pointers,Medium,https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+Merge Sorted Array,88,Two Pointers,Easy,https://leetcode.com/problems/merge-sorted-array/
+Pascal's Triangle,118,Dynamic Programming,Easy,https://leetcode.com/problems/pascals-triangle/
+Valid Palindrome,125,Two Pointers;String Manipulation,Easy,https://leetcode.com/problems/valid-palindrome/
+Gas Station,134,Greedy,Hard,https://leetcode.com/problems/gas-station/
+Max Points on a Line,149,Hash Map;Math,Hard,https://leetcode.com/problems/max-points-on-a-line/
+Reverse Words in a String,151,String Manipulation,Medium,https://leetcode.com/problems/reverse-words-in-a-string/
+Two Sum II - Input Array Is Sorted,167,Two Pointers;Binary Search,Easy,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+Majority Element,169,Divide and Conquer,Easy,https://leetcode.com/problems/majority-element/
+Rotate Array,189,Two Pointers,Medium,https://leetcode.com/problems/rotate-array/
+Find the Middle Index in Array,1991,Prefix Sum,Easy,https://leetcode.com/problems/find-the-middle-index-in-array/
+Happy Number,202,Hash Set; Math,Easy,https://leetcode.com/problems/happy-number/
+Product of Array Except Self,238,Prefix Sum;Array,Medium,https://leetcode.com/problems/product-of-array-except-self/
+Valid Anagram,242,Hash Map,Easy,https://leetcode.com/problems/valid-anagram/
+Maximum Count of Positive Integer and Negative Integer,2529,Array,Easy,https://leetcode.com/problems/maximum-count-of-positive-integer-and-an-negative-integer/
+Move Zeroes,283,Two Pointers,Easy,https://leetcode.com/problems/move-zeroes/
+Score of a String,3110,String Manipulation,Easy,https://leetcode.com/problems/score-of-a-string/
+Reverse String,344,Two Pointers,Easy,https://leetcode.com/problems/reverse-string/
+Find the Difference,389,Hash Map,Easy,https://leetcode.com/problems/find-the-difference/
+Diagonal Traverse,498,Matrix;Simulation,Medium,https://leetcode.com/problems/diagonal-traverse/
+Reverse Words in a String III,557,String Manipulation,Easy,https://leetcode.com/problems/reverse-words-in-a-string-iii/
+Reshape the Matrix,566,Matrix,Easy,https://leetcode.com/problems/reshape-the-matrix/
+Binary Search,704,Binary Search,Easy,https://leetcode.com/problems/binary-search/
+To Lower Case,709,String Manipulation,Easy,https://leetcode.com/problems/to-lower-case/
+Find Pivot Index,724,Prefix Sum,Easy,https://leetcode.com/problems/find-pivot-index/
+Stone Game,877,Dynamic Programming,Medium,https://leetcode.com/problems/stone-game/
+Monotonic Array,896,Array,Easy,https://leetcode.com/problems/monotonic-array/
+Maximum Sum Circular Subarray,918,Dynamic Programming,Hard,https://leetcode.com/problems/maximum-sum-circular-subarray/
+The kth Factor of n,1492,Math,Medium,https://leetcode.com/problems/the-kth-factor-of-n/
+Matrix Diagonal Sum,1572,Matrix,Easy,https://leetcode.com/problems/matrix-diagonal-sum/
+Goal Parser Interpretation,1678,String Manipulation,Easy,https://leetcode.com/problems/goal-parser-interpretation/

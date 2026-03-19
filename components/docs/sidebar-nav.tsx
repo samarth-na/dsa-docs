@@ -141,6 +141,19 @@ export function SidebarNav({ sections, currentPath, isOpen, onClose }: Props) {
 
   const sidebarContent = (
     <div className="space-y-7 pb-8">
+      <div className="mb-4">
+        <a
+          href="https://github.com/namanarora2707/SAGE_6thSem_Section_B"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 rounded-md border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-2 text-[13px] font-medium text-[var(--text-secondary)] transition hover:border-[var(--brand-1)] hover:text-[var(--brand-2)]"
+        >
+          <span>Source</span>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="h-3.5 w-3.5 shrink-0">
+            <path d="M3.5 2.5 6 5m0 0 2.5 2.5M6 5v6m-2.5-4 3 7m-3-3 3-3m-4.5 3-4.5-2M13 6.5l2.5 2.5M9.5 14l-3-7m3 7-3 3m4.5-3 4.5-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+      </div>
       {renderedSections.map((section) => (
         <section key={section.label}>
           <h2 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-secondary)]">

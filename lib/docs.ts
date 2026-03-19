@@ -121,7 +121,9 @@ const getQuestionTypeNavItems = cache((): NavItem[] => {
             label: toTitleCase(entry.name),
             link: `/docs/questions/${entry.name}`,
         }))
-        .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+        .sort((a, b) =>
+            a.label.localeCompare(b.label, undefined, { numeric: true }),
+        );
 
     return [{ label: "All Questions", link: "/docs/questions" }, ...types];
 });
@@ -205,7 +207,7 @@ function resolveQuestionLinkByName(
         }
     }
 
-    return bestKey ? titleToLink.get(bestKey) ?? null : null;
+    return bestKey ? (titleToLink.get(bestKey) ?? null) : null;
 }
 
 function escapeMdCell(value: string): string {
@@ -353,7 +355,10 @@ export function getDocPageBySlug(slug: string[]): DocPage | null {
             "| Question | Types | Difficulty | Description |",
             "|---|---|---|---|",
             ...rows.map((row) => {
-                const link = resolveQuestionLinkByName(row.Question ?? "", titleToLink);
+                const link = resolveQuestionLinkByName(
+                    row.Question ?? "",
+                    titleToLink,
+                );
                 const questionCell = link
                     ? `[${escapeMdCell(row.Question ?? "")}](${link})`
                     : escapeMdCell(row.Question ?? "");
@@ -672,3 +677,113 @@ export const getQuestionTopicMatrix = cache((): TopicMatrixRow[] => {
         trim: true,
     }) as TopicMatrixRow[];
 });
+
+const ARRAYS_DIR = path.join(DOCS_ROOT, "arrays");
+
+export type ArrayCsvRow = {
+    "Question Name": string;
+    "LeetCode Number": string;
+    "Concepts Involved": string;
+    Difficulty: string;
+    "LeetCode Link": string;
+};
+
+export const getArraysCsvData = cache((): ArrayCsvRow[] => {
+    const csvPath = path.join(ARRAYS_DIR, "array_questions.csv");
+    const text = fs.readFileSync(csvPath, "utf8");
+    const lines = text.trim().split("\n");
+    if (lines.length < 2) return [];
+
+    return lines.slice(1).map((line) => {
+        const parts = line.split(",");
+        const name = parts[0]?.trim() ?? "";
+        const link = parts[parts.length - 1]?.trim() ?? "";
+        const difficulty = parts[parts.length - 2]?.trim() ?? "";
+
+        if (parts.length === 5) {
+            return {
+                "Question Name": name,
+                "LeetCode Number": parts[1]?.trim() ?? "",
+                "Concepts Involved": parts[2]?.trim() ?? "",
+                Difficulty: difficulty,
+                "LeetCode Link": link,
+            };
+        }
+
+        const lecNumber = parts[1]?.trim() ?? "";
+        const concepts = parts
+            .slice(2, parts.length - 2)
+            .map((c) => c.trim())
+            .filter(Boolean)
+            .join("; ");
+
+        return {
+            "Question Name": name,
+            "LeetCode Number": lecNumber,
+            "Concepts Involved": concepts,
+            Difficulty: difficulty,
+            "LeetCode Link": link,
+        };
+    });
+});
+
+export type ArrayDocItem = {
+    slug: string;
+    title: string;
+    content: string;
+    toc: TocItem[];
+};
+
+export function getArraysDocSlugs(): string[] {
+    if (!exists(ARRAYS_DIR) || !fs.statSync(ARRAYS_DIR).isDirectory()) {
+        return [];
+    }
+    return fs
+        .readdirSync(ARRAYS_DIR, { withFileTypes: true })
+        .filter(
+            (entry) =>
+                entry.isFile() &&
+                /\.(md|mdx|csv)$/i.test(entry.name),
+        )
+        .map((entry) => entry.name.replace(/\.(md|mdx|csv)$/i, ""))
+        .sort();
+}
+
+export function getArraysDocBySlug(slug: string): ArrayDocItem | null {
+    const mdPath = path.join(ARRAYS_DIR, `${slug}.md`);
+    const mdxPath = path.join(ARRAYS_DIR, `${slug}.mdx`);
+    const csvPath = path.join(ARRAYS_DIR, `${slug}.csv`);
+
+    if (exists(csvPath)) {
+        const rows = getArraysCsvData();
+        const title = toTitleCase(slug);
+        const lines: string[] = [
+            `# ${title}`,
+            "",
+            "| # | Question Name | LeetCode # | Concepts Involved | Difficulty |",
+            "|---|---|---|---|---|",
+            ...rows.map(
+                (row, i) =>
+                    `| ${i + 1} | [${escapeMdCell(row["Question Name"])}](${row["LeetCode Link"]}) | ${escapeMdCell(row["LeetCode Number"])} | ${escapeMdCell(row["Concepts Involved"])} | ${escapeMdCell(row.Difficulty)} |`,
+            ),
+        ];
+        const content = lines.join("\n");
+        const toc = extractToc(content);
+
+        return { slug, title, content, toc };
+    }
+
+    let filePath: string | null = null;
+    if (exists(mdPath)) filePath = mdPath;
+    else if (exists(mdxPath)) filePath = mdxPath;
+
+    if (!filePath) return null;
+
+    const raw = fs.readFileSync(filePath, "utf8");
+    const { frontmatter, content } = parseFrontmatter(raw);
+    const title =
+        frontmatter.title || extractTitle(content, toTitleCase(slug));
+    const toc = extractToc(content);
+
+    return { slug, title, content, toc };
+}

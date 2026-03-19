@@ -8,6 +8,7 @@ import type { NavSection } from "@/lib/docs";
 import { SidebarNav } from "@/components/docs/sidebar-nav";
 import { TocNav } from "@/components/docs/toc-nav";
 import { TopNav } from "@/components/docs/top-nav";
+import { Footer } from "@/components/docs/footer";
 import { toPublicPath } from "@/lib/public-paths";
 
 type Props = {
@@ -67,7 +68,7 @@ export function DocsShell({ children, toc, currentPath, navSections }: Props) {
             )}
 
             <div
-                className={`mx-auto grid h-[calc(100vh-3.5rem)] w-full max-w-[1600px] grid-cols-1 border-x border-[var(--border-soft)] ${gridCols}`}
+                className={`mx-auto grid h-[calc(100vh-3.5rem)] w-full max-w-[1600px] grid-cols-1 border-[var(--border-soft)] ${gridCols}`}
             >
                 {showLeftSidebar ? (
                     <SidebarNav
@@ -77,10 +78,14 @@ export function DocsShell({ children, toc, currentPath, navSections }: Props) {
                         onClose={() => setIsMenuOpen(false)}
                     />
                 ) : null}
-                <main className="h-[calc(100vh-3.5rem)] overflow-y-auto border-x border-[var(--border-soft)] bg-[var(--bg-page)] px-4 py-7 pb-24 sm:px-6 md:px-10 md:pb-7 xl:px-14">
+                <main className="h-[calc(100vh-3.5rem)] overflow-y-auto bg-[var(--bg-page)] px-4 py-7 pb-24 sm:px-6 md:px-10 md:pb-7 xl:px-14">
                     {children}
                 </main>
                 {showRightSidebar ? <TocNav items={toc} /> : null}
+            </div>
+
+            <div className="mx-auto max-w-[1600px] border-[var(--border-soft)]">
+                <Footer />
             </div>
         </div>
     );
